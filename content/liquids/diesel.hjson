@@ -1,0 +1,4 @@
+type: liquid
+name: "Diesel"
+description: "Combustível derivado do petróleo, utilizado em motores de combustão interna"
+color: "#815902"

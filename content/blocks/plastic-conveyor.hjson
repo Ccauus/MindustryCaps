@@ -13,7 +13,7 @@ itemCapacity: 1
 armored: false
 buildCostMultiplier: 1.0
 hasColor: true
-color: ffffff
+color: #ffffff
 requirements: [
     plastic/2
     graphite/1
