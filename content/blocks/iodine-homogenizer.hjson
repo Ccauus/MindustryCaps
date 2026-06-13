@@ -34,16 +34,21 @@ consumes: {
 }
 craftTime: 120
 outputLiquid: iodic-acid/0.15
-craftEffect: colorSpark
-updateEffect: formsmoke
+craftEffect: {
+  type: MultiEffect
+  effects: [
+    steam
+  ]
+}
+updateEffect: formSmoke
 updateEffectChance: 0.07
-ambientSound: bioLoop
+ambientSound: shield
 ambientSoundVolume: 1
 drawer: {
   type: DrawMulti
   drawers: [
     {
-        type: DrawRegion 
+        type: DrawRegion
         suffix: "-bottom"
     }
     {
@@ -55,11 +60,8 @@ drawer: {
     }
     {
       type: DrawGlowRegion
-      suffix: -oilheat
+      suffix: "-oilheat"
       color: ffffff
-      alpha: 1
-      pulse: 0
-      flicker: 0
     }
   ]
 }
