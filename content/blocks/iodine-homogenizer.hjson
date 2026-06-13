@@ -1,0 +1,55 @@
+type: GenericCrafter
+name: "Homogenizador de Iodo"
+description: "Homogenizador de alta pressão que emulcifica Iodo e Petróleo em Ácido Iódico"
+size: 2
+health: 200
+category: crafting
+alwaysUnlocked: false
+buildVisibility: shown
+solid: true
+update: true
+destructible: true
+rebuildable: true
+// custo
+requirements: [
+	iodine/200
+    titanium/125
+    metaglass/100
+    silicon/100
+]
+hasItems: true
+hasLiquids: true
+hasPower: true
+itemCapacity: 8
+liquidCapacity: 15
+// receita
+consumes: {
+	power: 1.5
+	items: [
+		iodine/4
+	]
+}
+craftTime: 120
+outputLiquid: iodic-acid/1.5
+craftEffect: pulverize
+updateEffect: smoke
+updateEffectChance: 0.05
+ambientSound: machine
+ambientSoundVolume: 0.05
+drawer: {
+  type: DrawMulti
+  drawers: [
+    {
+      type: DrawDefault
+    }
+    {
+      type: DrawLiquidRegion
+      suffix: -oiltanque
+      drawLiquid: oil
+    }
+    {
+      type: DrawGlowRegion
+      suffix: -oilheat
+    }
+  ]
+}
