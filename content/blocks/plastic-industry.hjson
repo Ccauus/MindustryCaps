@@ -26,14 +26,14 @@ consumes: {
 	power: 1.2
 	items: [
 		coal/3
-		graphite/2
+		graphite/1
 	]
 	liquids: [
 		cryofluid/0.08
 	]
 }
 craftTime: 90
-outputItem: plastic/2
+outputItem: plastic/3
 craftEffect: pulverize
 updateEffect: smoke
 updateEffectChance: 0.05
