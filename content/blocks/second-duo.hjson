@@ -42,15 +42,15 @@ ammoTypes: {
     damage: 42
     width: 15
     height: 18
-    backColor: 167efde1
-    frontColor: 57a3ff
+    backColor: #167efde1
+    frontColor: #57a3ff
     ammoMultiplier: 2
     reloadMultiplier: 1.1
     shootEffect: shootBig
     smokeEffect: {
       type: WaveEffect
-      colorFrom: 61a8ff
-      colorTo: 5e5d5f
+      colorFrom: #61a8ff
+      colorTo: #5e5d5f
       sizeFrom: 0
       sizeTo: 20
       lifetime: 30
@@ -59,7 +59,7 @@ ammoTypes: {
     pierce: true
     pierceCap: 2
     fragBullets: 10
-    trailColor: cce3ff
+    trailColor: #cce3ff
     trailWidth: 4
     trailLength: 10
     shoot: {
@@ -73,8 +73,8 @@ ammoTypes: {
       width: 10
       hitEffect: flakExplosion
       height: 11
-      backColor: 0072ff
-      frontColor: cce3ff
+      backColor: #0072ff
+      frontColor: #cce3ff
     }
   }	
 	copper: {

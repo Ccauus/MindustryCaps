@@ -43,18 +43,18 @@ drawer: {
   type: DrawMulti
   drawers: [
     {
-      type: DrawDefault
+      type: DrawDefaultw
     }
     {
       type: DrawLiquidRegion
       suffix: -tanque
       drawLiquid: cryofluid
-      color: 92b9ff
+      color: #92b9ff
     }
     {
       type: DrawGlowRegion
       suffix: -heat
-      color: ffffff
+      color: #ffffff
     }
   ]
 }
