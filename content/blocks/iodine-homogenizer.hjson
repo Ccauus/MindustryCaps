@@ -57,7 +57,9 @@ drawer: {
       type: DrawGlowRegion
       suffix: -oilheat
       color: ffffff
-      fadeSpeed: 0
+      alpha: 1
+      pulse: 0
+      flicker: 0
     }
   ]
 }
