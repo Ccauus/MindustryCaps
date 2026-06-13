@@ -43,7 +43,7 @@ craftEffect: {
       lifetime: 30
       sizeFrom: 0
       sizeTo: 20
-      strokeFrom: 10
+      strokeFrom: 8
       strokeTo: 0
       colorFrom: ce5cff
       colorTo: 7d26cd
@@ -53,8 +53,10 @@ craftEffect: {
 }
 updateEffect: none
 updateEffectChance: 0.07
-ambientSound: shield
-ambientSoundVolume: 1
+ambientSound: machine
+ambientSoundVolume: 0.9
+craftSound: hum
+craftSoundVolume: 0.9
 drawer: {
   type: DrawMulti
   drawers: [
