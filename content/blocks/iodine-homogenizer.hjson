@@ -28,28 +28,36 @@ consumes: {
 	items: [
 		iodine/4
 	]
+    liquids: [
+        oil/0.1
+    ]
 }
 craftTime: 120
-outputLiquid: iodic-acid/1.5
-craftEffect: pulverize
-updateEffect: smoke
-updateEffectChance: 0.05
-ambientSound: machine
-ambientSoundVolume: 0.05
+outputLiquid: iodic-acid/0.15
+craftEffect: colorSpark
+updateEffect: formsmoke
+updateEffectChance: 0.07
+ambientSound: bioLoop
+ambientSoundVolume: 1
 drawer: {
   type: DrawMulti
   drawers: [
     {
-      type: DrawDefault
+        type: DrawRegion 
+        suffix: "-bottom"
     }
     {
-      type: DrawLiquidRegion
-      suffix: -oiltanque
-      drawLiquid: oil
+        type: DrawLiquidTile
+        drawLiquid: oil
+    }
+    {
+      type: DrawDefault
     }
     {
       type: DrawGlowRegion
       suffix: -oilheat
+      color: ffffff
+      fadeSpeed: 0
     }
   ]
 }
