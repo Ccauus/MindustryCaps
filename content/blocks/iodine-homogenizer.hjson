@@ -37,10 +37,21 @@ outputLiquid: iodic-acid/0.15
 craftEffect: {
   type: MultiEffect
   effects: [
-    steam
+    ventSteam
+    {
+      type: WaveEffect
+      lifetime: 30
+      sizeFrom: 0
+      sizeTo: 20
+      strokeFrom: 10
+      strokeTo: 0
+      colorFrom: ce5cff
+      colorTo: 7d26cd
+      sides: 6
+    }
   ]
 }
-updateEffect: formSmoke
+updateEffect: none
 updateEffectChance: 0.07
 ambientSound: shield
 ambientSoundVolume: 1
