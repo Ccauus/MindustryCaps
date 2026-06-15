@@ -1,3 +1,11 @@
 type: liquid
 name: "Ácido Iódico"
 description: "Ácido oxidante que atua como produto de reações"
+color: ae4fd7
+flammability: 0.8
+temperature: 0.6
+heatCapacity: 0.2
+viscosity: 0.7
+explosiveness: 0.0
+emitLight: true
+lightColor: "ce5cff"

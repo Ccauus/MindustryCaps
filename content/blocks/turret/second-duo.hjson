@@ -3,7 +3,8 @@ name: "Trio"
 description: "Better than Duo"
 size: 2
 health: 900
-maxAmmo: 4
+maxAmmo: 9
+ammoPerShot: 3
 category: turret
 requirements: [
   titanium/90
@@ -17,7 +18,10 @@ recoil: 5
 recoilTime: 60
 inaccuracy: 10
 shootCone: 7
-rotateSpeed: 20
+rotateSpeed: 7
+targetAir: true
+targetGround: true
+displayAmmoMultiplier: true
 hasLiquids: true
 coolantMultiplier: 1.5
 ammoUseEffect: casing2
@@ -33,7 +37,7 @@ shoot: {
   firstShotDelay: 45
   spread: 30
 }
-shootSound: shoot
+shootSound: shootRipple
 ammoTypes: {
   plastic: {
     type: BasicBulletType
@@ -42,25 +46,29 @@ ammoTypes: {
     damage: 42
     width: 15
     height: 18
-    backColor: #167efde1
-    frontColor: #57a3ff
+    spin: 3
+    backColor: 4f60ff
+    frontColor: 57a3ff
     ammoMultiplier: 2
     reloadMultiplier: 1.1
-    shootEffect: shootBig
+    shootEffect: shootSmokeDisperse
     smokeEffect: {
       type: WaveEffect
-      colorFrom: #61a8ff
-      colorTo: #5e5d5f
+      colorFrom: 61a8ff
+      colorTo: 5e5d5f
       sizeFrom: 0
       sizeTo: 20
       lifetime: 30
+      strokeFrom: 1
+      strokeTo: 0
+      sides: 6
     }
-    hitEffect: hitBulletBig
+    hitEffect: hitBulletColor
     pierce: true
     pierceCap: 2
     fragBullets: 10
-    trailColor: #cce3ff
-    trailWidth: 4
+    trailColor: cce3ff
+    trailWidth: 5
     trailLength: 10
     shoot: {
       shake: 3
@@ -73,8 +81,8 @@ ammoTypes: {
       width: 10
       hitEffect: flakExplosion
       height: 11
-      backColor: #0072ff
-      frontColor: #cce3ff
+      backColor: 0072ff
+      frontColor: cce3ff
     }
   }	
 	copper: {
@@ -84,6 +92,7 @@ ammoTypes: {
 		damage: 31
 		width: 20
 		height: 18
+    spin: 1
 		fragBullets: 6
 		fragBullet: {
       type: BasicBulletType
