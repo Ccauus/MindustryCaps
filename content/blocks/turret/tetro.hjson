@@ -5,7 +5,12 @@ size: 3
 health: 1200
 maxAmmo: 12
 ammoPerShot: 4
+rotate: false
+rotateSpeed: 0
 category: turret
+shootWarmupSpeed: 0.03
+minWarmup: 0.9
+linearWarmup: true
 requirements: [
   titanium/90
   silicon/60
@@ -52,6 +57,22 @@ ammoTypes: {
             trailLength: 5
         }
     }
+}
+drawer: {
+  type: DrawTurret
+  parts: [
+    {
+      type: RegionPart
+      suffix: -rotator
+      progress: {
+        // Transformamos o progress em um objeto com interpolação:
+        type: warmup
+        //ISSO AQUI FAZ A MÁGICA: começa lento e acelera no final!
+        interp: pow3In  
+      }
+      moveRot: 1440
+    }
+  ]
 }
 requirements: [
   copper/50
