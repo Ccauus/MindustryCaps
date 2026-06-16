@@ -1,0 +1,59 @@
+type: ItemTurret
+name: "Tetro"
+description: "lmkdiuvb"
+size: 3
+health: 1200
+maxAmmo: 12
+ammoPerShot: 4
+category: turret
+requirements: [
+  titanium/90
+  silicon/60
+  copper/100
+]
+range: 160
+reload: 45 // Tempo de recarga entre os disparos
+shoot: {
+  type: ShootBarrel
+  barrels: [
+    // [x, y, ângulo]
+    0, 0, 0    // Topo (Norte)
+    0, -25, 180 // Baixo (Sul)
+    12.5, -12.5, -90  // Direita (Leste)
+    -12.5, -12.5, 90  // Esquerda (Oeste)
+  ]
+  shots: 4       // Garante que os 4 canos vão atirar juntos por "gatilhada"
+  shotDelay: 0   // 0 faz todos atirarem exatamente ao mesmo tempo
+}
+ammoTypes: {
+    copper: {
+        type: BasicBulletType
+        speed: 1.6
+	    lifetime: 100
+	    damage: 31
+	    width: 20
+        trailColor: cce3ff
+        trailWidth: 5
+        trailLength: 5
+        height: 18
+        spin: 4
+	    fragBullets: 6
+	    fragBullet: {
+            type: MissileBulletType
+		    speed: 2
+		    lifetime: 16
+		    damage: 6
+		    width: 5
+		    height: 6
+            ackColor: ffffff
+            frontColor: ffffff
+            trailColor: cce3ff
+            trailWidth: 5
+            trailLength: 5
+        }
+    }
+}
+requirements: [
+  copper/50
+  lead/40
+]
