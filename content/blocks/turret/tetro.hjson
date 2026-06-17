@@ -5,19 +5,23 @@ size: 3
 health: 1200
 maxAmmo: 12
 ammoPerShot: 4
-rotate: false
 rotateSpeed: 0
+shootCone: 360
+outline: true
+outlineColor: 302b28
+recoil: 0
+shootWarmupSpeed: 0.04
+minWarmup: 0.95
+warmupMaintainTime: 30
+shake: 4
 category: turret
-shootWarmupSpeed: 0.03
-minWarmup: 0.9
-linearWarmup: true
 requirements: [
   titanium/90
   silicon/60
   copper/100
 ]
 range: 160
-reload: 45 // Tempo de recarga entre os disparos
+reload: 100 // Tempo de recarga entre os disparos
 shoot: {
   type: ShootBarrel
   barrels: [
@@ -34,27 +38,27 @@ ammoTypes: {
     copper: {
         type: BasicBulletType
         speed: 1.6
-	    lifetime: 100
-	    damage: 31
-	    width: 20
+	      lifetime: 100
+	      damage: 31
+	      width: 20
         trailColor: cce3ff
         trailWidth: 5
         trailLength: 5
         height: 18
         spin: 4
-	    fragBullets: 6
-	    fragBullet: {
-            type: MissileBulletType
-		    speed: 2
-		    lifetime: 16
-		    damage: 6
-		    width: 5
-		    height: 6
-            ackColor: ffffff
-            frontColor: ffffff
-            trailColor: cce3ff
-            trailWidth: 5
-            trailLength: 5
+	      fragBullets: 6
+	      fragBullet: {
+          type: MissileBulletType
+		      speed: 2
+		      lifetime: 16
+		      damage: 6
+		      width: 5
+		      height: 6
+          backColor: ffffff
+          frontColor: ffffff
+          trailColor: cce3ff
+          trailWidth: 5
+          trailLength: 5
         }
     }
 }
@@ -63,14 +67,50 @@ drawer: {
   parts: [
     {
       type: RegionPart
-      suffix: -rotator
-      progress: {
-        // Transformamos o progress em um objeto com interpolação:
-        type: warmup
-        //ISSO AQUI FAZ A MÁGICA: começa lento e acelera no final!
-        interp: pow3In  
-      }
-      moveRot: 1440
+      suffix: -barrel
+      mirror: true
+      moveX: 2
+      progress: warmup
+      heatProgress: warmup
+      heatColor: fb955b
+      moves: [
+        {
+          progress: recoil
+          x: -4
+        }
+      ]
+    }
+    {
+      type: RegionPart
+      suffix: -uppermid
+      mirror: true
+      progress: warmup
+      moveX: -1
+      moveY: 3
+      heatProgress: warmup
+      heatColor: fb955b
+      moves: [
+        {
+          progress: recoil
+          x: -1
+        }
+      ]
+    }
+    {
+      type: RegionPart
+      suffix: -lowermid
+      mirror: true
+      progress: warmup
+      moveX: -1
+      moveY: -3
+      heatProgress: warmup
+      heatColor: fb955b
+      moves: [
+        {
+          progress: recoil
+          x: -1
+        }
+      ]
     }
   ]
 }
