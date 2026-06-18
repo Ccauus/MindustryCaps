@@ -8,7 +8,7 @@ ammoPerShot: 4
 rotateSpeed: 0
 shootCone: 360
 outline: true
-outlineColor: 302b28
+squareSprite: false
 recoil: 0
 shootWarmupSpeed: 0.04
 minWarmup: 0.95
@@ -82,6 +82,36 @@ drawer: {
     }
     {
       type: RegionPart
+      suffix: -upperbarrel
+      mirror: false
+      moveY: 2
+      progress: warmup
+      heatProgress: warmup
+      heatColor: fb955b
+      moves: [
+        {
+          progress: recoil
+          y: -3
+        }
+      ]
+    }
+    {
+      type: RegionPart
+      suffix: -lowerbarrel
+      mirror: false
+      moveY: -2
+      progress: warmup
+      heatProgress: warmup
+      heatColor: fb955b
+      moves: [
+        {
+          progress: recoil
+          y: 3
+        }
+      ]
+    }
+    {
+      type: RegionPart
       suffix: -uppermid
       mirror: true
       progress: warmup
@@ -109,6 +139,38 @@ drawer: {
         {
           progress: recoil
           x: -1
+        }
+      ]
+    }
+    {
+      type: RegionPart
+      suffix: -uppercenter
+      mirror: true
+      progress: warmup
+      moveX: 3
+      moveY: -1
+      heatProgress: warmup
+      heatColor: fb955b
+      moves: [
+        {
+          progress: recoil
+          y: -0.5
+        }
+      ]
+    }
+    {
+      type: RegionPart
+      suffix: -lowercenter
+      mirror: true
+      progress: warmup
+      moveX: 3
+      moveY: 1
+      heatProgress: warmup
+      heatColor: fb955b
+      moves: [
+        {
+          progress: recoil
+          y: 0.5
         }
       ]
     }
