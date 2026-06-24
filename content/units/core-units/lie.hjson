@@ -9,7 +9,7 @@ health: 200
 drag: 0.08
 speed: 5
 accel: 0.07 //aceleration
-range: 100
+range: 200
 lowAltitude: false
     //constrtução
 buildSpeed: 1
@@ -235,7 +235,33 @@ weapons: [
         }
         shootY: 8
         bullet: {
+            type: BasicBulletType
+                //sprite da bala
+            sprite: large-orb
+            width: 15
+            height: 15
+                //caracteristicas da bala
+            speed: 8
             recoil: 3 // o quão pra traz a unidade vai ao atirar
+            drag: 0.02
+            lifetime: 200
+            damage: 20
+            splashDamage: 10
+            splashDamageRadius: 20
+            buildingDamageMultiplier: 0.000000000001
+                //efeitos da bala
+            trailEffect: missileTrail
+            trailInterval: 4      // essa variavel muda se o rastro vai ou não criar um rastro "liso". Ele deixa circulos pra tras.
+            trailParam: 3
+            shrinkX: 0.05
+            shrinkY: 0
+                    //cores
+            frontColor: bf85ff
+            backColor: 8c4ecf
+            trailColor: 8c4ecf
+            hitColor: 8c4ecf
+            trailLength: 10
+            trailWidth: 2.5
             chargeEffect: {
                 type: MultiEffect
                 effects: [
