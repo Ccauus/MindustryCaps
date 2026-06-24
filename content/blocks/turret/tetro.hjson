@@ -14,6 +14,7 @@ shootWarmupSpeed: 0.04
 minWarmup: 0.95
 warmupMaintainTime: 30
 shake: 4
+
 category: turret
 requirements: [
   titanium/90
@@ -60,6 +61,7 @@ ammoTypes: {
           trailWidth: 5
           trailLength: 5
         }
+        
     }
 }
 drawer: {

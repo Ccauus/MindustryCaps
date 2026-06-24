@@ -1,0 +1,71 @@
+type: ItemTurret
+name: "Estrela"
+description: "bgfu3h wds 2"
+size: 2
+health: 600
+maxAmmo: 8
+ammoPerShot: 2
+category: turret
+requirements: [
+  titanium/90
+  silicon/60
+  copper/100
+]
+rotateSpeed: 20
+outline: true
+squareSprite: false
+recoil: 4
+shootWarmupSpeed: 0.04
+minWarmup: 0.95
+warmupMaintainTime: 30
+shake: 4
+range: 160
+reload: 100
+//tiro
+ammoTypes: {
+    copper: {
+        type: BasicBulletType
+        speed: 1.6
+	      lifetime: 100
+	      damage: 31
+	      width: 20
+        trailColor: cce3ff
+        trailWidth: 5
+        trailLength: 5
+        height: 18
+        spin: 4
+	      fragBullets: 6
+	      fragBullet: {
+          type: MissileBulletType
+		      speed: 2
+		      lifetime: 16
+		      damage: 6
+		      width: 5
+		      height: 6
+          backColor: ffffff
+          frontColor: ffffff
+          trailColor: cce3ff
+          trailWidth: 5
+          trailLength: 5
+        }
+    }
+}
+//partes da torreta
+drawer: {
+    type: DrawTurret
+    parts: [
+        {
+            type: RegionPart
+            suffix: -top
+            mirror: false
+            heatProgress: warmup
+            heatColor: 5d5df6
+            moves: [
+                {
+                progress: recoil
+                y: 4
+                }
+            ]
+        }
+    ]
+}

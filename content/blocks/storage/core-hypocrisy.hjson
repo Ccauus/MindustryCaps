@@ -1,0 +1,26 @@
+type: CoreBlock
+name: "Core: Hypocrisy"
+description: "Núcleo mais básico do sistema de mineração da IAPE. Blindado, porém, capaz de armazenar poucos items."
+size: 6
+health: 5000
+armor: 0
+category: effect
+//visual
+hasColor: true
+squareSprite: false
+//items
+hasItems: true
+itemCapacity: 5000
+//units
+unitCapModifier: 10
+unitType: lie
+//materiais
+requirements: [
+    plastic/2000
+    iodine/3000
+    silicon/6000
+]
+//others
+requiresCoreZone: false
+isFirstTier: true
+alwaysUnlocked: true

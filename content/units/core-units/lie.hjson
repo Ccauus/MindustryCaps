@@ -1,0 +1,326 @@
+    //tipo
+type: flying
+flying: true
+controller: BuilderAI
+faceTarget: true
+    //caracteristicas
+rotateSpeed: 10
+health: 200
+drag: 0.08
+speed: 5
+accel: 0.07 //aceleration
+range: 100
+lowAltitude: false
+    //constrtução
+buildSpeed: 1
+buildRange: 100
+    //mineração
+itemCapacity: 30
+mineTier: 2
+mineSpeed: 3
+mineWalls: true
+mineFloor: true
+    //cores e efeitos
+hitSize: 12
+        //engine
+engineColor: bf85ff
+engines: [
+    {
+        x: 8
+        y: -8
+        radius: 3
+        rotation: 0
+    }
+    {
+        x: -8
+        y: -8
+        radius: 3
+        rotation: -180
+    }
+    {
+        x: 0
+        y: -11
+        radius: 4.5
+        rotation: -90
+    }
+]
+shadowElevation: 2
+groundLayer: 40
+        //TRAIL
+
+        //OUTLINE
+outline: true
+outlineColor: 22172e
+shieldColor: 35ff00
+    //PARTES DA UNIDADE (FORMAS E SPRITES)
+parts: [
+    {
+        type: HaloPart
+        layer: 101
+        y: 8
+        sides: 4
+        radius: 0.1
+        thickness: 0.2
+        color: bf85ff
+        radiusTo: 2
+        strokeTo: 1
+        rotateSpeed: 1
+        shapes: 4
+        shapeRadius: 0.1
+    }
+    {
+        type: FlarePart
+        layer: 10000000000
+        under: false
+        progress: recoil
+        y: 18
+        color1: bf85ff
+        color2: ffffff
+        spinSpeed: 1
+        radius: 0
+        radiusTo: 6
+        strokeFrom: 0
+        strokeTo: 3
+        sides: 6
+        followRotation: true
+    }
+    {
+        suffix: -barrel
+        type: RegionPart
+        moveRot: 0
+        moveX: 0
+        moveY: -4
+        x: 0
+        y: 1
+        mirror: false
+        heatProgress: warmup
+        moves: [
+            {
+                type: PartMove
+                progress: {
+                    type: warmup
+                    ops: [
+                        {
+                            op: curve
+                            interp: pow3In
+                        }
+                    ]
+                } 
+            }
+            {
+                type: PartMove
+                y: 4
+                progress: recoil
+            }
+        ]
+    }
+    {
+        suffix: -wbottom
+        type: RegionPart
+        layer: 0.001
+        moveRot: 0
+        moveX: 0
+        moveY: 6
+        y: -6
+        x: 0
+        mirror: true
+        under: true
+        moves: [
+            {
+                type: PartMove
+                progress: {
+                    type: warmup
+                    ops: [
+                        {
+                            op: curve
+                            interp: pow3In
+                        }
+                    ]
+                } 
+            }
+            {
+                type: PartMove
+                y: -1
+                progress: recoil
+            }
+        ]
+    }
+]
+    //HABILIDADES
+abilities: [
+    //QUANDO A UNIDADE ANDAR
+    {
+        type: MoveEffectAbility
+        minVelocity: 0.2
+        interval: 0.000000000000000000000000000000000001
+        rotateEffect: true
+        x: 0
+        y: -9
+        effect: {
+            type: ParticleEffect
+            colorFrom: bf85ff
+            colorTo: 371f52
+            lifetime: 40
+            particles: 1
+            cone: 0
+            length: 0
+            baseLenght: 0
+            lightScl: 4
+            lightOpacity: 2
+            spin: 0
+            sizeFrom: 4
+            sizeTo: 0
+        }
+    }
+    {
+        type: MoveEffectAbility
+        minVelocity: 0.2
+        interval: 0.000000000000000000000000000000000001
+        rotateEffect: true
+        x: 8
+        y: -8
+        effect: {
+            type: ParticleEffect
+            colorFrom: bf85ff
+            colorTo: 371f52
+            lifetime: 10
+            particles: 1
+            cone: 0
+            length: 0
+            baseLenght: 0
+            lightScl: 4
+            lightOpacity: 2
+            spin: 0
+            sizeFrom: 4
+            sizeTo: 0
+        }
+    }
+    {
+        type: MoveEffectAbility
+        minVelocity: 0.2
+        interval: 0.000000000000000000000000000000000001
+        rotateEffect: true
+        x: -8
+        y: -8
+        effect: {
+            type: ParticleEffect
+            colorFrom: bf85ff
+            colorTo: 371f52
+            lifetime: 10
+            particles: 1
+            cone: 0
+            length: 0
+            baseLenght: 0
+            lightScl: 4
+            lightOpacity: 2
+            spin: 0
+            sizeFrom: 4
+            sizeTo: 0
+        }
+    }
+]
+        //ARMAS
+weapons: [
+    {
+        x: 0
+        y: 0
+        reload: 120
+        rotate: false
+        mirror: false
+        shootSound: shootEmp
+        chargeSound: none
+        shake: 7
+        shoot: {
+            firstShotDelay: 90
+        }
+        shootY: 8
+        bullet: {
+            recoil: 3 // o quão pra traz a unidade vai ao atirar
+            chargeEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: WaveEffect
+                        progress: warmup
+                        rotWithParent: true
+                        offsetY: 0
+                        offset: 90
+                        offsetX: 10
+                        layer: 100
+                        sizeFrom: 40
+                        sizeTo: 0
+                        strokeFrom: 1.5
+                        strokeTo: 2
+                        colorFrom: 51376d
+                        colorTo: bf85ff
+                        lifetime: 40
+                    }
+                    {
+                        type: ParticleEffect
+                        progress: warmup
+                        rotWithParent: true
+                        offsetX: 10
+                        layer: 100
+                        length: -30 // Valor NEGATIVO faz elas nascerem a 40 pixels de distância e irem para o centro (0)
+                        baseLength: 30
+                        cone: 360
+                        particles: 24
+                        sizeFrom: 0
+                        colorFrom: bf85ff
+                        colorTo: bf85ff
+                        sizeTo: 3
+                        lifetime: 40
+                    }
+                ]
+            }
+            shootEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
+                        line: true
+                        rotWithParent: true
+                        offsetX: 10
+                        layer: 100
+                        length: 20
+                        baseLength: 15 
+                        cone: 90
+                        particles: 36
+                        sizeFrom: 4
+                        colorFrom: bf85ff
+                        colorTo: bf85ff
+                        sizeTo: 0
+                        lifetime: 15
+                    }
+                    {
+                        type: WaveEffect
+                        rotWithParent: true
+                        offsetY: 0
+                        offsetX: 10
+                        layer: 100
+                        sizeFrom: 0
+                        sizeTo: 40
+                        strokeFrom: 2
+                        strokeTo: 1.5
+                        colorFrom: bf85ff
+                        colorTo: 51376d
+                        lifetime: 30
+                    }
+                    
+                ]
+                
+            }
+            smokeEffect: none
+            speed: 5
+            lifetime: 80
+            width: 10
+            height: 15
+            hitColor: 7c0ff6
+            
+        }
+    }
+]
+  //ataque
+targetGround: true
+targetAir: true
+fogRadius: 30
