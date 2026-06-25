@@ -1,0 +1,60 @@
+localizedName: Timera-445j
+description: WIP
+alwaysUnlocked: true
+//CARACTERISTICAS
+radius: 0.8
+minZoom: 1
+bloom: true
+clearSectorOnLose: true
+prebuildBase: false
+//ORBITA
+drawOrbit: true
+orbitRadius: 50
+orbitSpacing: 3
+//SETORES
+sectorSize: 1
+startSector: 0
+sectorSeed: 14513
+//ATMOSFERA
+hasAtmosphere: true
+atmosphereColor: 008bff
+atmosphereRadIn: 0
+atmosphereRadOut: 0.5
+//OUTROS
+accessible: false
+updateLighting: true //se o corpo é afetado por luz externa
+visible: true
+iconColor: 008bff
+allowWaveSimulation: false
+allowWaves: true
+//CORE
+defaultCore: core-hypocrisy
+parent: sistem-1002p
+solarSystem: sistem-1002p
+launchCandidates: []
+mesh: [
+    {
+        type: NoiseMesh
+        planet: Timera-445j
+        divisions: 5
+        radius: 0.8
+        seed: 11
+        color1: 6363e9
+        color2: 083458
+        octaves: 6
+        persistance: 1
+        mag: 1
+    }
+]
+generator: {
+    octaves: 4
+    persistance: 0.52
+    scale: 26
+    mag: 0.721
+    thresh: 1.18
+    min: 50
+    max: 150
+    radMin: 300
+    radMax: 1000
+    berylChance: 0.5
+}
