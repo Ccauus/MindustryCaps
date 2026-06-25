@@ -1,6 +1,6 @@
 localizedName: sistem- 1002p
 radius: 5
-accessible: false
+accessible: true
 visible: true
 hasAtmosphere: false
 bloom: true
@@ -17,16 +17,16 @@ mesh: [
         type: SunMesh
         divisions: 10
         octaves: 2
-        persistance: 0.5
-        scl: 2
+        persistance: 2 //trabalha pro octave
+        scl: 1
         pow: 1
         mag: 1
         colorScale: 1.35
         colors: [
-            00ff46
-            ff0000
-            0017ff
-            ffe800
+            00a2ff
+            80d1ff
+            4d7eff
+            0074ff
         ]
     }
 ]

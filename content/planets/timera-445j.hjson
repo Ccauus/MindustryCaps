@@ -4,6 +4,7 @@ alwaysUnlocked: true
 //CARACTERISTICAS
 radius: 0.8
 minZoom: 1
+maxZoom: 10
 bloom: true
 clearSectorOnLose: true
 prebuildBase: false
