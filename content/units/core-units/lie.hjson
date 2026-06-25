@@ -9,7 +9,7 @@ health: 200
 drag: 0.08
 speed: 5
 accel: 0.07 //aceleration
-range: 200
+range: 300
 lowAltitude: false
     //constrtução
 buildSpeed: 1
@@ -21,7 +21,7 @@ mineSpeed: 3
 mineWalls: true
 mineFloor: true
     //cores e efeitos
-hitSize: 12
+hitSize: 15
         //engine
 engineColor: bf85ff
 engines: [
@@ -243,8 +243,8 @@ weapons: [
                 //caracteristicas da bala
             speed: 8
             recoil: 3 // o quão pra traz a unidade vai ao atirar
-            drag: 0.02
-            lifetime: 200
+            drag: 0.03
+            lifetime: 1200
             damage: 20
             splashDamage: 10
             splashDamageRadius: 20
@@ -275,7 +275,7 @@ weapons: [
                         layer: 100
                         sizeFrom: 40
                         sizeTo: 0
-                        strokeFrom: 1.5
+                        strokeFrom: 0.5
                         strokeTo: 2
                         colorFrom: 51376d
                         colorTo: bf85ff
@@ -327,7 +327,7 @@ weapons: [
                         sizeFrom: 0
                         sizeTo: 40
                         strokeFrom: 2
-                        strokeTo: 1.5
+                        strokeTo: 0.5
                         colorFrom: bf85ff
                         colorTo: 51376d
                         lifetime: 30
@@ -335,6 +335,19 @@ weapons: [
                     
                 ]
                 
+            }
+            despawnEffect: {
+                type: ParticleEffect
+                colorFrom: bf85ff
+                colorTo: 8c4ecf
+                particles: 50
+                cone: 360
+                lentgh: 500
+                baseLenght: 4
+                sizeFrom: 5
+                sizeTo: 0
+                lifetime: 300
+                interp: pow3Out
             }
             smokeEffect: none
             speed: 5
