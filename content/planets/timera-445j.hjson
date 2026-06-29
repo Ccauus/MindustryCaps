@@ -35,18 +35,47 @@ solarSystem: sistem-1002p
 launchCandidates: []
 mesh: [
     //relevo geral
+        //roxo
     {
         type: NoiseMesh
         planet: Timera-445j
-        divisions: 8
-        radius: 0.9
+        divisions: 10
+        radius: 0.85
         seed: 11
         octaves: 6
         persistance: 1
-        mag: 0.5
-        pow: 4
-        color1: ff00ff
-        color2: ff0000
+        mag: 1.2
+        pow: 10
+        color1: 704780
+        color2: 584261
+    }
+        //cinza
+    {
+        type: NoiseMesh
+        planet: Timera-445j
+        divisions: 10
+        radius: 0.85
+        seed: 23
+        octaves: 6
+        persistance: 1
+        mag: 1.2
+        pow: 5
+        color1: 342839
+        color2: 212430
+    }
+    //montanhas
+    {
+        type: NoiseMesh
+        planet: Timera-445j
+        divisions: 10
+        radius: 0.68
+        seed: 13
+        octaves: 7
+        persistance: 0.5
+        mag: 3
+        pow: 2
+        color1: 212430
+        color2: 53555c
     }
 ]
 generator: {
