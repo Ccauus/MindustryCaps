@@ -13,7 +13,7 @@ drawOrbit: true
 orbitRadius: 50
 orbitSpacing: 6
 //SETORES
-sectorSize: 1
+sectorSize: 2
 startSector: 0
 sectorSeed: 14513
 //ATMOSFERA
@@ -26,7 +26,7 @@ accessible: false
 updateLighting: true //se o corpo é afetado por luz externa
 visible: true
 iconColor: 008bff
-allowWaveSimulation: false
+allowWaveSimulation: true
 allowWaves: true
 //CORE
 defaultCore: core-hypocrisy
@@ -34,49 +34,37 @@ parent: sistem-1002p
 solarSystem: sistem-1002p
 launchCandidates: []
 mesh: [
-    //relevo geral
-        //roxo
+    //liquido
     {
         type: NoiseMesh
         planet: Timera-445j
         divisions: 10
-        radius: 0.85
-        seed: 11
+        radius: 0.975
+        seed: 13
         octaves: 6
-        persistance: 1
-        mag: 1.2
-        pow: 10
-        color1: 704780
-        color2: 584261
+        persistence: 0.5
+        scale: 0.3
+        mag: 0
+        pow: 1
+        color1: 75b0a5
+        color2: 64bdad
     }
-        //cinza
+    //continentes
     {
         type: NoiseMesh
         planet: Timera-445j
         divisions: 10
-        radius: 0.85
+        radius: 0.69
         seed: 23
         octaves: 6
-        persistance: 1
-        mag: 1.2
-        pow: 5
-        color1: 342839
-        color2: 212430
-    }
-    //montanhas
-    {
-        type: NoiseMesh
-        planet: Timera-445j
-        divisions: 10
-        radius: 0.68
-        seed: 13
-        octaves: 7
-        persistance: 0.5
+        persistence: 0.3
+        scale: 0.7
         mag: 3
         pow: 2
-        color1: 212430
-        color2: 53555c
+        color1: 3a5665
+        color2: 334644
     }
+    //relevo geral
 ]
 generator: {
     octaves: 4
