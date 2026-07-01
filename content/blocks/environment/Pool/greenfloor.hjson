@@ -9,4 +9,5 @@ drownTime: 0
 emitLight: false
 supportsOverlay: true
 cacheLayer: water
+albedo: 0.9
 
