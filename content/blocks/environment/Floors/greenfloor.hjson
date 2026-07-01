@@ -1,0 +1,12 @@
+type: Floor
+name: Green Floor
+variants: 5
+speedMultiplier: 0.9
+isLiquid: true
+liquidDrop: water
+liquidMultiplier: 0.35
+drownTime: 0
+emitLight: false
+supportsOverlay: true
+cacheLayer: water
+

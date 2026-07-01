@@ -39,32 +39,64 @@ mesh: [
         type: NoiseMesh
         planet: Timera-445j
         divisions: 10
-        radius: 0.975
+        radius: 0.95
         seed: 13
         octaves: 6
-        persistence: 0.5
-        scale: 0.3
+        persistence: 1
         mag: 0
-        pow: 1
-        color1: 75b0a5
-        color2: 64bdad
+        color1: 44726a
+        color2: 4d9185
     }
     //continentes
     {
         type: NoiseMesh
         planet: Timera-445j
-        divisions: 10
-        radius: 0.69
+        divisions: 6
+        radius: 0.84
         seed: 23
         octaves: 6
-        persistence: 0.3
-        scale: 0.7
-        mag: 3
-        pow: 2
-        color1: 3a5665
-        color2: 334644
+        persistence: 0.9
+        mag: 1.2
+        color1: 43655f
+        color2: 587270
     }
-    //relevo geral
+    {
+        type: NoiseMesh
+        planet: Timera-445j
+        divisions: 6
+        radius: 0.84
+        seed: 145
+        octaves: 6
+        persistence: 0.7
+        mag: 1.2
+        color1: 999d9e
+        color2: 587270
+    }
+    {
+        type: NoiseMesh
+        planet: Timera-445j
+        divisions: 6
+        radius: 0.83
+        seed: 67
+        octaves: 6
+        persistence: 0.8
+        mag: 1.2
+        color1: 34423f
+        color2: 214b43
+    }
+        //montanhas
+    {
+        type: NoiseMesh
+        planet: Timera-445j
+        divisions: 6
+        radius: 0.475
+        seed: 68
+        octaves: 5
+        persistence: 0.7
+        mag: 8
+        color1: 999d9e
+        color2: 344b47
+    }
 ]
 generator: {
     octaves: 4
