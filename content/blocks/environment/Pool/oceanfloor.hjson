@@ -1,0 +1,12 @@
+type: Floor
+name: Green Deep Water
+variants: 2
+speedMultiplier: 0.3
+isLiquid: true
+liquidDrop: water
+liquidMultiplier: 1
+drownTime: 90
+emitLight: false
+supportsOverlay: true
+cacheLayer: water
+albedo: 0.8
