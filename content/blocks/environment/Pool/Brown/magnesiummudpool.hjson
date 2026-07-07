@@ -1,0 +1,12 @@
+type: Floor
+name: Magnesium Mud Pool
+//efeitos visuais
+variants: 0
+emitLight: false
+supportsOverlay: true
+cacheLayer: mud
+albedo: 0.2
+//in game
+speedMultiplier: 0.3
+isLiquid: true
+drownTime: 0

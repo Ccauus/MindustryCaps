@@ -1,0 +1,14 @@
+type: Floor
+name: Magnesium Mud Floor
+//efeitos visuais
+variants: 5
+emitLight: false
+supportsOverlay: true
+albedo: 0.2
+walkEffect: ripple
+walkSound: splash
+//in game
+speedMultiplier: 0.3
+isLiquid: false //não permite a navegação de navios por ser "false"
+drownTime: 0
+liquidDrop: water
