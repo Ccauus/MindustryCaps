@@ -1,0 +1,5 @@
+type: Floor
+name: Gray Sand Floor
+variants: 8
+itemDrop: sand
+playerUnmineable: false
