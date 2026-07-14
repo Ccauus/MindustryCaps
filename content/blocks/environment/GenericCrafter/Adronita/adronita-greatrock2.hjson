@@ -1,0 +1,13 @@
+type: GenericCrafter
+name: Adronite Great Rock 2
+size: 2
+squareSprite: false
+configurable: false
+variants: 0
+solid: true
+ambientSoundVolume: 0
+targetable: false
+
+requirements: []
+buildTime: 150
+customShadow: true

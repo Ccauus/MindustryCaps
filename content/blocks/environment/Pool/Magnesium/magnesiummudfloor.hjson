@@ -8,7 +8,7 @@ albedo: 0.2
 walkEffect: ripple
 walkSound: splash
 //in game
-speedMultiplier: 0.3
-isLiquid: false //não permite a navegação de navios por ser "false"
-drownTime: 0
-liquidDrop: water
+speedMultiplier: 0.6
+isLiquid: false 
+status: slow
+statusDuration: 250

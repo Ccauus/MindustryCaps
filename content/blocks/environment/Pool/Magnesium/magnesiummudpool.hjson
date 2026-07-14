@@ -7,6 +7,8 @@ supportsOverlay: true
 cacheLayer: mud
 albedo: 0.2
 //in game
-speedMultiplier: 0.3
+speedMultiplier: 0.5
 isLiquid: true
 drownTime: 0
+status: slow
+statusDuration: 300

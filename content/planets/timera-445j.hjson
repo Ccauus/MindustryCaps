@@ -19,8 +19,8 @@ sectorSeed: 14513
 //ATMOSFERA
 hasAtmosphere: true
 atmosphereColor: 008bff
-atmosphereRadIn: 0.1
-atmosphereRadOut: 0.5
+atmosphereRadIn: -0.02
+atmosphereRadOut: 0.25
 //OUTROS
 accessible: false
 updateLighting: true //se o corpo é afetado por luz externa
@@ -84,6 +84,31 @@ mesh: [
         color1: 34423f
         color2: 214b43
     }
+    //plantas
+    {
+        type: NoiseMesh
+        planet: Timera-445j
+        divisions: 6
+        radius: 0.81
+        seed: 90
+        octaves: 6
+        persistence: 0.6
+        mag: 1.5
+        color1: 9463cf
+        color2: 385758
+    }
+    {
+        type: NoiseMesh
+        planet: Timera-445j
+        divisions: 6
+        radius: 0.81
+        seed: 54
+        octaves: 6
+        persistence: 0.9
+        mag: 1.3
+        color1: 2e154b
+        color2: 9826cf
+    }
         //montanhas
     {
         type: NoiseMesh
@@ -98,9 +123,50 @@ mesh: [
         color2: 344b47
     }
 ]
+cloudMesh: [
+    {
+        type: HexSkyMesh
+        planet: Timera-445j
+        speed: 0.9
+        radius: 0.15
+        divisions: 7
+        octaves: 6
+        color: 619c9e
+        persistence: 0.5
+        scl: 0.7
+        thresh: 0.4
+
+    }
+    {
+        type: HexSkyMesh
+        planet: Timera-445j
+        speed: 0.5
+        radius: 0.11
+        divisions: 7
+        octaves: 6
+        color: 548d8a
+        persistence: 0.5
+        scl: 0.7
+        thresh: 0.5
+
+    }
+    {
+        type: HexSkyMesh
+        planet: Timera-445j
+        speed: 0.5
+        radius: 0.125
+        divisions: 7
+        octaves: 6
+        color: 385758
+        persistence: 0.8
+        scl: 0.5
+        thresh: 0.5
+
+    }
+]
 generator: {
     octaves: 4
-    persistance: 0.52
+    persistence: 0.52
     scale: 26
     mag: 0.721
     thresh: 1.18
