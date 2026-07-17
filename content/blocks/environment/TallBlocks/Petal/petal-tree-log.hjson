@@ -1,0 +1,4 @@
+type: TallBlock
+name: Tree Log
+variants: 1
+emitLight: false
