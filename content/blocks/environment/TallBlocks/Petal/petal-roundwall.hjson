@@ -1,0 +1,5 @@
+type: StaticTree
+name: Round Petal Wall
+variants: 2
+solid: true
+buildVisibility: sandboxOnly

@@ -11,3 +11,4 @@ targetable: false
 requirements: []
 buildTime: 150
 customShadow: true
+buildVisibility: sandboxOnly

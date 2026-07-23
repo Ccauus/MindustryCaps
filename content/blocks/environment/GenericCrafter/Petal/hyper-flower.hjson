@@ -9,7 +9,11 @@ solid: false
 
 ambientSoundVolume: 0
 targetable: false
+emitLight: true
+lightColor: 7449a7
+lightRadius: 50
 
 requirements: []
 buildTime: 30
 customShadow: true
+buildVisibility: sandboxOnly

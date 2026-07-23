@@ -1,6 +1,3 @@
 type: TreeBlock
 name: Giant Flower
-variants: 0
-emitLight: true
-lightColor: bb95e8
-lightRadius: 10
+variants: 3
