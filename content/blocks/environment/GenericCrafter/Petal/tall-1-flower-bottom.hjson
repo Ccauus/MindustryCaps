@@ -1,0 +1,19 @@
+type: GenericCrafter
+name: Tall Flower 1 Bottom
+variants: 0
+size: 1
+squareSprite: false
+configurable: false
+variants: 0
+solid: true
+
+ambientSoundVolume: 0
+targetable: false
+emitLight: false
+breakable: false
+accessible: false
+
+requirements: []
+buildTime: 0
+hasShadow: false
+buildVisibility: sandboxOnly
