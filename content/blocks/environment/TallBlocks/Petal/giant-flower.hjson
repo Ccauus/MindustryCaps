@@ -1,3 +1,6 @@
-type: TreeBlock
+type: TallBlock
 name: Giant Flower
 variants: 3
+emitLight: true
+lightRadius: 20
+lightColor: b686f0
