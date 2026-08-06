@@ -7,8 +7,10 @@ variants: 0
 solid: true
 ambientSoundVolume: 0
 targetable: false
+destructible: false
+health: 2147483647
 
-requirements: []
-buildTime: 500
 customShadow: true
 buildVisibility: sandboxOnly
+requirements: []
+breakable: false

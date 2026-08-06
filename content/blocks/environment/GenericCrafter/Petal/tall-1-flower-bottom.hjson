@@ -4,16 +4,16 @@ variants: 0
 size: 1
 squareSprite: false
 configurable: false
-variants: 0
 solid: true
+update: false
 
 ambientSoundVolume: 0
 targetable: false
 emitLight: false
 breakable: false
 accessible: false
+destructible: false
+health: 2147483647
 
-requirements: []
-buildTime: 0
 hasShadow: false
 buildVisibility: sandboxOnly
