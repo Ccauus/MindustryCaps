@@ -5,10 +5,10 @@ variants: 0
 lobesMin: 4
 lobesMax: 8
 magMin: 2
-magMax: 5
+magMax: 7
 originMin: 2
 originMax: 4
-timeScale: 200
+timeScale: 150
 sclMin: 20
 sclMax: 50
 size: 1
