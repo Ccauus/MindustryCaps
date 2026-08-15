@@ -1,6 +1,7 @@
 type: TallBlock
 name: Giant Flower
-variants: 3
+variants: 0
 emitLight: true
 lightRadius: 20
 lightColor: b686f0
+customShadow: true
