@@ -1,0 +1,4 @@
+//purple
+type: OreBlock
+itemDrop: amatin
+variants:
