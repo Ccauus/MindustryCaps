@@ -15,7 +15,6 @@ buildCostMultiplier: 1.0
 hasColor: true
 color: ffffff
 requirements: [
-    plastic/2
     graphite/1
     lead/1
 ]

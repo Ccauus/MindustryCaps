@@ -1,4 +1,5 @@
 //red
 type: OreBlock
+name: Erythrite Ore (Wall)
 itemDrop: erythrite
-variants:
+wallOre: true

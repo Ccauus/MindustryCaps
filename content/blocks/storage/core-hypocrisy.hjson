@@ -1,25 +1,39 @@
 type: CoreBlock
 name: "Core: Hypocrisy"
-description: "Núcleo mais básico do sistema de mineração da IAPE. Blindado, porém, capaz de armazenar poucos items."
-size: 6
+description: "The most basic core of the IAPE mining system. Armored, yet capable of storing only a few items."
+size: 4
 health: 5000
-armor: 0
+armor: 3
 category: effect
+
 //visual
 hasColor: true
 squareSprite: false
+
 //items
 hasItems: true
 itemCapacity: 5000
+
 //units
 unitCapModifier: 10
 unitType: lie
+
 //materiais
 requirements: [
-    plastic/2000
-    iodine/3000
     silicon/6000
 ]
+
+    //RESEARCH TREE
+research: {
+  # Define que este bloco é o início absoluto de uma árvore
+  root: true
+  planet: timera-445j
+  # O nome que vai aparecer no topo da árvore de pesquisa
+  name: Timera
+  # Não requer desbloqueio prévio
+  requiresUnlock: false
+}
+
 //others
 requiresCoreZone: false
 isFirstTier: true

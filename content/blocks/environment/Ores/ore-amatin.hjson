@@ -1,4 +1,4 @@
 //purple
 type: OreBlock
+name: Amatin Ore
 itemDrop: amatin
-variants:

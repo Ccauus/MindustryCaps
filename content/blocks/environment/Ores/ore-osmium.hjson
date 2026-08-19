@@ -1,4 +1,4 @@
 // gray/white
 type: OreBlock
+name: Osmium Ore
 itemDrop: osmium
-variants:
