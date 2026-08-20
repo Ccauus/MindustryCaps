@@ -1,6 +1,6 @@
 type: GenericCrafter
-name: Osmium Chunk 1
-size: 2
+name: Osmium Chunk 2
+size: 1
 squareSprite: false
 configurable: false
 variants: 0
@@ -10,8 +10,8 @@ ambientSoundVolume: 0
 targetable: false
 
 requirements: [
-    osmium/140
+    osmium/50
 ]
-buildTime: 280
+buildTime: 100
 customShadow: true
 buildVisibility: sandboxOnly
