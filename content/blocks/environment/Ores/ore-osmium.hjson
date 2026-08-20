@@ -3,4 +3,5 @@ type: OreBlock
 name: Osmium Ore
 itemDrop: osmium
 variants: 5
-squareSprite: false
+
+needsSurface: false

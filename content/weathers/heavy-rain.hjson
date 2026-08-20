@@ -1,0 +1,13 @@
+type: RainWeather
+name: Heavy oRain
+color: 3e6bb0
+xspeed: 15
+yspeed: 52
+stroke: 1.2
+density: 3680
+sizeMin: 24
+sizeMax: 80
+liquid: water
+
+sound: rain
+soundVol: 0.4
