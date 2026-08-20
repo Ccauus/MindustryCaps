@@ -1,6 +1,6 @@
 type: GenericCrafter
 name: Osmium Geode
-size: 3
+size: 2
 squareSprite: false
 configurable: false
 variants: 0
@@ -10,8 +10,8 @@ ambientSoundVolume: 0
 targetable: false
 
 requirements: [
-    osmium/200
+    osmium/140
 ]
-buildTime: 400
+buildTime: 280
 customShadow: true
 buildVisibility: sandboxOnly

@@ -9,7 +9,7 @@ ambientSoundVolume: 0
 targetable: false
 
 requirements: [
-    osmium/70
+    osmium/80
 ]
 buildTime: 200
 customShadow: true
