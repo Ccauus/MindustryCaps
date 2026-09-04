@@ -1,0 +1,16 @@
+type: GenericCrafter
+name: Carbon Amatin Great Rock 1
+size: 3
+squareSprite: false
+configurable: false
+variants: 0
+solid: true
+ambientSoundVolume: 0
+targetable: false
+
+requirements: [
+    amatin/70
+]
+buildTime: 300
+customShadow: true
+buildVisibility: sandboxOnly

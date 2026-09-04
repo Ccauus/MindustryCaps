@@ -1,8 +1,8 @@
 name: "Amatin"
-color: a191ad
+color: 3a9e95
 hardness: 1
-charge: 0
-explosiveness: 0
+charge: 0.5
+explosiveness: 0.2
 flammability: 0
 radioactivity: 0
 shownPlanets: [timera-445j]

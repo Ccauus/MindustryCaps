@@ -2,3 +2,4 @@
 type: OreBlock
 name: Amatin Ore
 itemDrop: amatin
+variants: 5

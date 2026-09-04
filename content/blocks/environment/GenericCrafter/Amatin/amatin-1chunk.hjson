@@ -1,0 +1,16 @@
+type: GenericCrafter
+name: Amatin Chunk 
+size: 2
+squareSprite: false
+configurable: false
+variants: 0
+solid: true
+ambientSoundVolume: 0
+targetable: false
+
+requirements: [
+    amatin/50
+]
+buildTime: 100
+customShadow: true
+buildVisibility: sandboxOnly

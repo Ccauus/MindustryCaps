@@ -29,7 +29,7 @@ iconColor: 008bff
 allowWaveSimulation: true
 allowWaves: true
 //CORE
-defaultCore: core-hypocrisy
+defaultCore: core-ambition
 parent: sistem-1002p
 solarSystem: sistem-1002p
 launchCandidates: []

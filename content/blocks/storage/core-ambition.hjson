@@ -1,5 +1,5 @@
 type: CoreBlock
-name: "Core: Hypocrisy"
+name: "Core: Ambission"
 description: "The most basic core of the IAPE mining system. Armored, yet capable of storing only a few items."
 size: 4
 health: 5000
