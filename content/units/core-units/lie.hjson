@@ -3,6 +3,7 @@ type: flying
 flying: true
 controller: BuilderAI
 faceTarget: true
+
     //caracteristicas
 rotateSpeed: 10
 health: 200
@@ -11,37 +12,45 @@ speed: 4
 accel: 0.07 //aceleration
 range: 600
 lowAltitude: false
+
     //constrtução
 buildSpeed: 1
 buildRange: 500
+
     //mineração
 itemCapacity: 30
 mineTier: 1
 mineSpeed: 8
 mineWalls: true
 mineFloor: true
+
     //cores e efeitos
 hitSize: 10
+
         //engine
 engineColor: d1d1d1
 engines: [
     {
         x: 0
-        y: -5
+        y: -3
         radius: 2
         rotation: 0
     }
 ]
 shadowElevation: 2
 groundLayer: 40
+
         //TRAIL
+
         //OUTLINE
 outline: true
 outlineColor: 171b2e
 shieldColor: 35ff00
+
     //PARTES DA UNIDADE (FORMAS E SPRITES)
 parts: [
 ]
+
     //HABILIDADES
 abilities: [
     //QUANDO A UNIDADE ANDAR
@@ -51,7 +60,7 @@ abilities: [
         interval: 0.000000000000000000000000000000000001
         rotateEffect: true
         x: 0
-        y: -5
+        y: -3
         effect: {
             type: ParticleEffect
             colorFrom: d1d1d1
@@ -70,5 +79,7 @@ abilities: [
     }
 
 ]
+
         //ARMAS
+        
   //ataque
