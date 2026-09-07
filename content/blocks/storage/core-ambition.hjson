@@ -38,3 +38,4 @@ research: {
 requiresCoreZone: false
 isFirstTier: true
 alwaysUnlocked: true
+thrusterLength: 10

@@ -7,144 +7,40 @@ faceTarget: true
 rotateSpeed: 10
 health: 200
 drag: 0.08
-speed: 5
+speed: 4
 accel: 0.07 //aceleration
-range: 300
+range: 600
 lowAltitude: false
     //constrtução
 buildSpeed: 1
-buildRange: 100
+buildRange: 500
     //mineração
 itemCapacity: 30
-mineTier: 2
-mineSpeed: 3
+mineTier: 1
+mineSpeed: 8
 mineWalls: true
 mineFloor: true
     //cores e efeitos
-hitSize: 15
+hitSize: 10
         //engine
-engineColor: bf85ff
+engineColor: d1d1d1
 engines: [
     {
-        x: 8
-        y: -8
-        radius: 3
-        rotation: 0
-    }
-    {
-        x: -8
-        y: -8
-        radius: 3
-        rotation: -180
-    }
-    {
         x: 0
-        y: -11
-        radius: 4.5
-        rotation: -90
+        y: -5
+        radius: 2
+        rotation: 0
     }
 ]
 shadowElevation: 2
 groundLayer: 40
         //TRAIL
-
         //OUTLINE
 outline: true
-outlineColor: 22172e
+outlineColor: 171b2e
 shieldColor: 35ff00
     //PARTES DA UNIDADE (FORMAS E SPRITES)
 parts: [
-    {
-        type: HaloPart
-        layer: 101
-        y: 8
-        sides: 4
-        radius: 0.1
-        thickness: 0.2
-        color: bf85ff
-        radiusTo: 2
-        strokeTo: 1
-        rotateSpeed: 1
-        shapes: 4
-        shapeRadius: 0.1
-    }
-    {
-        type: FlarePart
-        layer: 10000000000
-        under: false
-        progress: recoil
-        y: 18
-        color1: bf85ff
-        color2: ffffff
-        spinSpeed: 1
-        radius: 0
-        radiusTo: 6
-        strokeFrom: 0
-        strokeTo: 3
-        sides: 6
-        followRotation: true
-    }
-    {
-        suffix: -barrel
-        type: RegionPart
-        moveRot: 0
-        moveX: 0
-        moveY: -4
-        x: 0
-        y: 1
-        mirror: false
-        heatProgress: warmup
-        moves: [
-            {
-                type: PartMove
-                progress: {
-                    type: warmup
-                    ops: [
-                        {
-                            op: curve
-                            interp: pow3In
-                        }
-                    ]
-                } 
-            }
-            {
-                type: PartMove
-                y: 4
-                progress: recoil
-            }
-        ]
-    }
-    {
-        suffix: -wbottom
-        type: RegionPart
-        layer: 0.001
-        moveRot: 0
-        moveX: 0
-        moveY: 6
-        y: -6
-        x: 0
-        mirror: true
-        under: true
-        moves: [
-            {
-                type: PartMove
-                progress: {
-                    type: warmup
-                    ops: [
-                        {
-                            op: curve
-                            interp: pow3In
-                        }
-                    ]
-                } 
-            }
-            {
-                type: PartMove
-                y: -1
-                progress: recoil
-            }
-        ]
-    }
 ]
     //HABILIDADES
 abilities: [
@@ -155,12 +51,12 @@ abilities: [
         interval: 0.000000000000000000000000000000000001
         rotateEffect: true
         x: 0
-        y: -9
+        y: -5
         effect: {
             type: ParticleEffect
-            colorFrom: bf85ff
-            colorTo: 371f52
-            lifetime: 40
+            colorFrom: d1d1d1
+            colorTo: 767676
+            lifetime: 15
             particles: 1
             cone: 0
             length: 0
@@ -168,198 +64,11 @@ abilities: [
             lightScl: 4
             lightOpacity: 2
             spin: 0
-            sizeFrom: 4
+            sizeFrom: 2
             sizeTo: 0
         }
     }
-    {
-        type: MoveEffectAbility
-        minVelocity: 0.2
-        interval: 0.000000000000000000000000000000000001
-        rotateEffect: true
-        x: 8
-        y: -8
-        effect: {
-            type: ParticleEffect
-            colorFrom: bf85ff
-            colorTo: 371f52
-            lifetime: 10
-            particles: 1
-            cone: 0
-            length: 0
-            baseLenght: 0
-            lightScl: 4
-            lightOpacity: 2
-            spin: 0
-            sizeFrom: 4
-            sizeTo: 0
-        }
-    }
-    {
-        type: MoveEffectAbility
-        minVelocity: 0.2
-        interval: 0.000000000000000000000000000000000001
-        rotateEffect: true
-        x: -8
-        y: -8
-        effect: {
-            type: ParticleEffect
-            colorFrom: bf85ff
-            colorTo: 371f52
-            lifetime: 10
-            particles: 1
-            cone: 0
-            length: 0
-            baseLenght: 0
-            lightScl: 4
-            lightOpacity: 2
-            spin: 0
-            sizeFrom: 4
-            sizeTo: 0
-        }
-    }
+
 ]
         //ARMAS
-weapons: [
-    {
-        x: 0
-        y: 0
-        reload: 120
-        rotate: false
-        mirror: false
-        shootSound: shootEmp
-        chargeSound: none
-        shake: 7
-        shoot: {
-            firstShotDelay: 90
-        }
-        shootY: 8
-        bullet: {
-            type: BasicBulletType
-                //sprite da bala
-            sprite: large-orb
-            width: 15
-            height: 15
-                //caracteristicas da bala
-            speed: 8
-            recoil: 3 // o quão pra traz a unidade vai ao atirar
-            drag: 0.03
-            lifetime: 1200
-            damage: 20
-            splashDamage: 10
-            splashDamageRadius: 20
-            buildingDamageMultiplier: 0.000000000001
-                //efeitos da bala
-            trailEffect: missileTrail
-            trailInterval: 4      // essa variavel muda se o rastro vai ou não criar um rastro "liso". Ele deixa circulos pra tras.
-            trailParam: 3
-            shrinkX: 0.05
-            shrinkY: 0
-                    //cores
-            frontColor: bf85ff
-            backColor: 8c4ecf
-            trailColor: 8c4ecf
-            hitColor: 8c4ecf
-            trailLength: 10
-            trailWidth: 2.5
-            chargeEffect: {
-                type: MultiEffect
-                effects: [
-                    {
-                        type: WaveEffect
-                        progress: warmup
-                        rotWithParent: true
-                        offsetY: 0
-                        offset: 90
-                        offsetX: 10
-                        layer: 100
-                        sizeFrom: 40
-                        sizeTo: 0
-                        strokeFrom: 0.5
-                        strokeTo: 2
-                        colorFrom: 51376d
-                        colorTo: bf85ff
-                        lifetime: 40
-                    }
-                    {
-                        type: ParticleEffect
-                        progress: warmup
-                        rotWithParent: true
-                        offsetX: 10
-                        layer: 100
-                        length: -30 // Valor NEGATIVO faz elas nascerem a 40 pixels de distância e irem para o centro (0)
-                        baseLength: 30
-                        cone: 360
-                        particles: 24
-                        sizeFrom: 0
-                        colorFrom: bf85ff
-                        colorTo: bf85ff
-                        sizeTo: 3
-                        lifetime: 40
-                    }
-                ]
-            }
-            shootEffect: {
-                type: MultiEffect
-                effects: [
-                    {
-                        type: ParticleEffect
-                        line: true
-                        rotWithParent: true
-                        offsetX: 10
-                        layer: 100
-                        length: 20
-                        baseLength: 15 
-                        cone: 90
-                        particles: 36
-                        sizeFrom: 4
-                        colorFrom: bf85ff
-                        colorTo: bf85ff
-                        sizeTo: 0
-                        lifetime: 15
-                    }
-                    {
-                        type: WaveEffect
-                        rotWithParent: true
-                        offsetY: 0
-                        offsetX: 10
-                        layer: 100
-                        sizeFrom: 0
-                        sizeTo: 40
-                        strokeFrom: 2
-                        strokeTo: 0.5
-                        colorFrom: bf85ff
-                        colorTo: 51376d
-                        lifetime: 30
-                    }
-                    
-                ]
-                
-            }
-            despawnEffect: {
-                type: ParticleEffect
-                colorFrom: bf85ff
-                colorTo: 8c4ecf
-                particles: 50
-                cone: 360
-                lentgh: 500
-                baseLenght: 4
-                sizeFrom: 5
-                sizeTo: 0
-                lifetime: 300
-                interp: pow3Out
-            }
-            smokeEffect: none
-            speed: 5
-            lifetime: 80
-            width: 10
-            height: 15
-            hitColor: 7c0ff6
-            
-        }
-    }
-]
   //ataque
-targetGround: true
-targetAir: true
-fogRadius: 30
