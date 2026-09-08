@@ -1,0 +1,11 @@
+type: Junction
+name: Junction
+description: "Allows for crossing two pipelines."
+health: 65
+size: 1
+speed: 10
+requirements: [
+  osmium/2
+]
+squareSprite: false
+category: distribution

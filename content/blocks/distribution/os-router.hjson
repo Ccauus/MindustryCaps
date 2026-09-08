@@ -1,0 +1,13 @@
+type: Router
+name: Router
+description: "Distributes received items equally among two or more recipients."
+size: 1
+speed: 8
+health: 100
+itemCapacity: 3
+requirements: [
+  osmium/4
+  amatin/2
+]
+squareSprite: false
+category: distribution
