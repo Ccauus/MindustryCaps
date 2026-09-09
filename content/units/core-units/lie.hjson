@@ -44,7 +44,7 @@ groundLayer: 40
 
         //OUTLINE
 outline: true
-outlineColor: 171b2e
+outlineColor: 414141
 shieldColor: 35ff00
 
     //PARTES DA UNIDADE (FORMAS E SPRITES)

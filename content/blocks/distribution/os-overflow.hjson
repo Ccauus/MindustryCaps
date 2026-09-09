@@ -1,0 +1,12 @@
+type: OverflowGate
+name: Overflow Gate
+description: Outputs items to the sides if the front path is blocked.
+size: 1
+health: 50
+requirements: [
+  osmium/5
+  erythrite/1
+]
+category: distribution
+squareSprite: false
+

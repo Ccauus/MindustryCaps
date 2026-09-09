@@ -1,0 +1,11 @@
+type: OverflowGate
+name: OverFlow Gate
+description: Works like an Overflow Controller but inverted.
+health: 50
+requirements: [
+  osmium/6
+  erythrite/1
+]
+invert: true
+category: distribution
+squareSprite: false

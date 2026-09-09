@@ -1,0 +1,10 @@
+type: Sorter
+invert: true
+name: Inverted Sorter
+description: Works like a Duct Sorter but outputs selected items to the sides instead of straight on.
+category: distribution
+requirements: [
+  osmium/4
+  amatin/2
+  erythrite/1
+]

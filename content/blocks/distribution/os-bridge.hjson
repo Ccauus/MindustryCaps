@@ -1,0 +1,14 @@
+type: DuctBridge
+name: Bridge Conveyor
+description: Acts as a bridge for crossing pipelines or terrain.
+health: 150
+size: 1
+requirements: [
+  osmium/6
+  amatin/4
+  erythrite/1
+] 
+category: distribution
+squareSprite: false
+range: 3
+speed: 4
