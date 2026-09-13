@@ -1,0 +1,15 @@
+type: DirectionalUnloader
+name: Unloader
+description: Unloads the selected item from nearby blocks.
+size: 1
+category: distribution
+requirements: [
+  osmium/10
+  amatin/50
+  erythrite/10
+]
+speed: 4
+solid: false
+underBullets: true
+regionRotated1: 1
+allowCoreUnload: true

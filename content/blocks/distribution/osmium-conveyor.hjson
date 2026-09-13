@@ -18,3 +18,5 @@ requirements: [
     osmium/1
 ]
 rotate: true
+bridgeReplacement: os-bridge
+junctionReplacement: os-junction

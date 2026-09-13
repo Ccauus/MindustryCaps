@@ -3,3 +3,4 @@ type: OreBlock
 name: Erythrite Ore (Wall)
 itemDrop: erythrite
 wallOre: true
+variants: 4

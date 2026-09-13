@@ -1,6 +1,6 @@
 type: DuctBridge
 name: Bridge Conveyor
-description: Acts as a bridge for crossing pipelines or terrain.
+description: Acts as a bridge for crossing conveyors or terrain.
 health: 150
 size: 1
 requirements: [
@@ -11,4 +11,4 @@ requirements: [
 category: distribution
 squareSprite: false
 range: 3
-speed: 4
+speed: 3

@@ -1,9 +1,9 @@
 type: RainWeather
-name: Heavy oRain
+name: Heavy Rain
 color: 3e6bb0
-xspeed: 15
+xspeed: 22
 yspeed: 52
-stroke: 1.2
+stroke: 1.4
 density: 3680
 sizeMin: 24
 sizeMax: 80

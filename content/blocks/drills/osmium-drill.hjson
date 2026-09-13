@@ -1,0 +1,14 @@
+type: Drill
+
+squareSprite: false
+health: 650
+category: production
+size: 2
+
+drillTime: 300
+tier: 1
+
+requirements: [
+  osmium/25
+  amatin/10
+]

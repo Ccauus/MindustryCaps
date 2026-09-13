@@ -1,0 +1,46 @@
+type: GenericCrafter
+name: Silica Batch Melter
+size: 3
+
+squareSprite: false
+health: 300
+category: crafting
+
+hasItems: true
+craftTime: 60
+consumes: {
+    power: 2
+}
+outputItems: [
+    silicon/5
+]
+
+drawer: {
+    type: DrawMulti
+    drawers: [
+        {
+            type: DrawDefault
+        }
+        {
+        type: DrawFrames
+        frames: 15
+        interval: 3
+        sine: false
+        onlyWorking: true
+        }
+        {
+            type: DrawGlowRegion
+            suffix: "-top"
+            color: d4aeee
+        }
+        {
+            type: DrawGlowRegion
+            suffix: "-top-blur"
+            color: d4aeee
+        }
+    ]
+}
+requirements: [
+    osmium/50
+    amatin/25
+]
