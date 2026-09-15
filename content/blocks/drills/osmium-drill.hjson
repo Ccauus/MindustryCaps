@@ -1,4 +1,5 @@
 type: Drill
+name: Osmium Drill
 
 squareSprite: false
 health: 650

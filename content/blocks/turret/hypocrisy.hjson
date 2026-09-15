@@ -1,0 +1,116 @@
+//name and type
+type: ItemTurret
+name: Hypocrisy
+
+//in game
+size: 2
+health: 400
+reload: 90
+recoil: 2
+category: turret
+rotateSpeed: 1.4
+    //outline
+    outline: true
+    outlineColor: 1e1e1e
+    
+    //requirements and research
+    requirements: [
+        silicon/35
+        osmium/50
+        amatin/20
+    ]
+    //targets
+    targetAir: false
+    targetGround: true
+
+
+
+//sound
+
+//pre-bullet
+
+
+//bullet
+ammoPerShot: 3
+range: 200
+
+    //shot
+    shoot: {
+        type: ShootHelix
+        mag: 4
+        scl: 3
+    }
+    //ammos
+    ammoTypes: {
+        osmium: {
+            type: BasicBulletType
+            sprite: large-orb
+
+            //size
+            width: 10
+            height: 10
+            shrinkX: 0
+            shrinkY: 0
+
+            //spin ane weave
+            spin: 0
+            weaveMag: 0
+            weaveScale: 0
+            //speed
+            speed: 3.5
+            lifetime: 40
+
+            //pierce
+            pierce: false
+            pierceBuilding: false
+
+            //damage
+            damage: 10
+
+             //colors
+            frontColor: f0d9ff 
+            hitColor: f0d9ff
+            trailColor: d4aeee
+
+            //effects
+                //trail
+                trailWidth: 2
+                trailLength: 10
+
+            //middle bullet
+            spawnBullets: [
+                {
+                    type: BasicBulletType
+                    sprite: my-secondmod-energy-arrow
+                    lifetime: 75
+                    speed: 4
+                    width: 15
+                    height: 20
+                    shrinkX: 0
+                    shrinkY: 0
+                    damage: 30
+
+                    //trail
+                    trailWidth: 3
+                    trailLength: 20
+                }
+            ]
+            
+
+           
+
+            
+                //hit
+                hitEffect: {
+                    type: ParticleEffect
+                    particles: 20
+                    lifetime: 20
+                    sizeFrom: 4
+                    sizeTo: 0
+                    length: 20
+                    cone: 45
+                    colorFrom: d4aeee
+                    colorTo: d4aeee
+                }
+        }
+    }
