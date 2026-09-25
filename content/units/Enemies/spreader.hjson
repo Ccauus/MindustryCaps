@@ -2,10 +2,10 @@ type: mech
 name: Spreader
 description: WIP
 
-speed: 0.5
+speed: 0.7
 health: 300
 armor: 2
-hitSize: 10.5
+hitSize: 10
 
 canBoost: false
 faceTarget: true
@@ -15,8 +15,11 @@ outlineColor: 1e1e1e
 outlineRadius: 3
 mechLegColor: 333333
 
-mechFrontSway: 0.2
+mechFrontSway: 0.1
+rotateSpeed: 2
+
 stepSound: mechStepSmall
+stepSoundVolume: 0.3
 
 weapons: [
     {
@@ -27,6 +30,9 @@ weapons: [
         mirror: true
         alternate: true
         baseRotation: 135 //it depends of "shootCone"
+
+        shootSound: shootCleroi
+        shootSoundVolume: 0.8
 
         recoil: 3
         shootCone: 360
@@ -161,6 +167,9 @@ weapons: [
         mirror: true
         alternate: true
         baseRotation: -160 //it depends of "shootCone"
+
+        shootSound: shootCleroi
+        shootSoundVolume: 0.8
 
         recoil: 3
         shootCone: 360
