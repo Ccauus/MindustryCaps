@@ -26,7 +26,7 @@ mineWalls: true
 mineFloor: true
 
     //cores e efeitos
-hitSize: 10
+hitSize: 4
 
         //engine
 engineColor: d1d1d1

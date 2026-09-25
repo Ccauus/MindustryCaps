@@ -1,0 +1,13 @@
+name: Thin Metal Alloy
+
+color: 8d8d8d
+
+cost: 0.5
+
+flammability: 0
+explosiveness: 0.1
+charge: 0.8
+radioactivity: 0
+
+shownPlanets: [timera-445j]
+research: amatin

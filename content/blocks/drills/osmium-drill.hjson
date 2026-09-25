@@ -6,7 +6,7 @@ health: 650
 category: production
 size: 2
 
-drillTime: 300
+drillTime: 600
 tier: 1
 
 requirements: [

@@ -3,19 +3,21 @@ type: ItemTurret
 name: Hypocrisy
 
 //in game
+squareSprite: false
 size: 2
 health: 400
 reload: 90
-recoil: 2
+recoil: 1.4
+recoilTime: 75
 category: turret
-rotateSpeed: 1.4
+rotateSpeed: 1.6
     //outline
     outline: true
     outlineColor: 1e1e1e
     
     //requirements and research
     requirements: [
-        silicon/35
+        thin-metal-alloy/35
         osmium/50
         amatin/20
     ]
@@ -27,48 +29,163 @@ rotateSpeed: 1.4
 
 //sound
 
+//DRAWERS
+drawer: {
+    type: DrawTurret
+    basePrefix: hypocrisy-
+    parts: [
+        {
+            type: RegionPart
+            suffix: -main
+            mirror: false
+            under: true
+            heatProgress: warmup
+            heatColor: d6bce8
+            heatLightOpacity: 0.9
+            moves: [
+                {
+                    progress: warmup
+                    x: 0
+                    y: 2
+                }
+                {
+                    progress: recoil
+                    x: 0
+                    y: -0.01
+                }
+            ]
+        }
+        {
+            type: RegionPart
+            suffix: -lowerwing
+            mirror: true
+            heatProgress: recoil
+            heatColor: d6bce8
+            heatLightOpacity: 0.9
+            moves: [
+                {
+                    progress: warmup
+                    x: 7
+                    y: -2.5
+                    rot: -60
+                }
+                {
+                    progress: recoil
+                    x: 0
+                    y: -0.3
+                    rot: -20
+                }
+            ]
+        }
+        {
+            type: regionPart
+            suffix: -upperwing
+            mirror: true
+            heatProgress: recoil
+            heatColor: d6bce8
+            heatLightOpacity: 0.9
+            moves: [
+                {
+                    progress: warmup
+                    x: 5.8
+                    y: -8
+                    rot: 50
+                }
+                {
+                    progress: recoil
+                    x: 0
+                    y: -0.3
+                    rot: -20
+                }
+            ]
+        }
+        {
+            type: RegionPart
+            suffix: -barrel
+            under: false
+            mirror: true
+            heatProgress: warmup
+            heatColor: d6bce8
+            heatLightOpacity: 0.9
+            moves: [
+                {
+                    progress: warmup
+                    x: 3
+                    y: 0.2
+                    rot: -20
+                }
+                {
+                    progress: recoil
+                    x: 0
+                    y: -1
+                    rot: -10
+                }
+            ]
+        }
+    ]
+}
 //pre-bullet
 
 
 //bullet
+minWarmup: 0.95
+shootWarmupSpeed: 0.03
 ammoPerShot: 3
 range: 200
 
     //shot
     shoot: {
-        type: ShootHelix
-        mag: 4
-        scl: 3
+        firstShotDelay: 60
+        type: ShootMulti
+        source: {
+            type: ShootPattern
+        }
+        dest: [
+            {
+                type: ShootPattern
+            }
+            {
+                type: ShootHelix
+                mag: 4
+                scl: 3
+                firstShotDelay: 8
+            }
+        ]
     }
+
+        //effect
+
     //ammos
     ammoTypes: {
         osmium: {
             type: BasicBulletType
-            sprite: large-orb
+            sprite: my-secondmod-energy-star
 
             //size
-            width: 10
-            height: 10
+            width: 14
+            height: 14
             shrinkX: 0
             shrinkY: 0
 
             //spin ane weave
-            spin: 0
+            spin: 4
             weaveMag: 0
             weaveScale: 0
+
             //speed
-            speed: 3.5
-            lifetime: 40
+            speed: 4
+            lifetime: 60
 
             //pierce
             pierce: false
             pierceBuilding: false
 
             //damage
-            damage: 10
+            damage: 20
 
              //colors
-            frontColor: f0d9ff 
+            frontColor: d4aeee
+            backColor: 7b678a
             hitColor: f0d9ff
             trailColor: d4aeee
 
@@ -76,41 +193,88 @@ range: 200
                 //trail
                 trailWidth: 2
                 trailLength: 10
-
-            //middle bullet
-            spawnBullets: [
-                {
-                    type: BasicBulletType
-                    sprite: my-secondmod-energy-arrow
-                    lifetime: 75
-                    speed: 4
-                    width: 15
-                    height: 20
-                    shrinkX: 0
-                    shrinkY: 0
-                    damage: 30
-
-                    //trail
-                    trailWidth: 3
-                    trailLength: 20
+                trailInterval: 0.0000000000000000000000001
+                trailEffect: {
+                    type: MultiEffect
+                    effects: [
+                        {
+                            type: ParticleEffect
+                            particles: 1
+                            lifetime: 15
+                            cone: 0
+                            length: 0
+                            baseLength: 0
+                            lightScl: 5
+                            lightOpacity: 2               
+                            sizeFrom: 2
+                            sizeTo: 0
+                            colorFrom: d4aeee
+                            colorTo: 8a5eaa
+                        }
+                    ]
                 }
-            ]
-            
-
-           
-
-            
-                //hit
-                hitEffect: {
+            //shooteffect
+            shootEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
+                        line: true
+                        particles: 20
+                        cone: 60
+                        sizeFrom: 3
+                        sizeTo: 0
+                        strokeFrom: 2
+                        strokeTo: 0
+                        lifetime: 15
+                        baseLength: 0
+                        length: 30
+                        colorFrom: d4aeee
+                        colorTo: d4aeee
+                    }
+                    {
+                        type: ParticleEffect
+                        line: true
+                        particles: 10
+                        sizeFrom: 3
+                        sizeTo: 0
+                        strokeFrom: 1.4
+                        strokeTo: 0
+                        lifetime: 10
+                        baseLength: 0
+                        length: 10
+                    }
+                ]
+            }
+            //hit
+            hitEffect: [
+                {
+                    type: WaveEffect
+                    sides: 15
+                    sizeFrom: 0
+                    sizeTo: 5
+                    strokeFrom: 1
+                    strokeTo: 0
+                    lifetime: 15
+                    colorFrom: d4aeee
+                    colorTo: 8a5eaa
+                }
+                {
                     type: ParticleEffect
+                    line: true
                     particles: 20
                     lifetime: 20
                     sizeFrom: 4
                     sizeTo: 0
-                    length: 20
+                    length: 30
                     cone: 45
                     colorFrom: d4aeee
-                    colorTo: d4aeee
+                    colorTo: 8a5eaa
                 }
+            ]
+            //Despawn
+            despawnEffect: [
+
+            ]
         }
     }

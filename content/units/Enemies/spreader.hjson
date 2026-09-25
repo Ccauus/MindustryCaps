@@ -1,0 +1,297 @@
+type: mech
+name: Spreader
+description: WIP
+
+speed: 0.5
+health: 300
+armor: 2
+hitSize: 10.5
+
+canBoost: false
+faceTarget: true
+mechStepParticles: true
+
+outlineColor: 1e1e1e
+outlineRadius: 3
+mechLegColor: 333333
+
+mechFrontSway: 0.2
+stepSound: mechStepSmall
+
+weapons: [
+    {
+        name: spreader-barrel
+        top: false
+        layerOffset: -0.001
+        rotate: false
+        mirror: true
+        alternate: true
+        baseRotation: 135 //it depends of "shootCone"
+
+        recoil: 3
+        shootCone: 360
+        inaccuracy: 2
+        reload: 45
+
+        x: -10
+        y: -3.7
+        
+        
+        shoot: {
+            type: ShootMulti
+
+            source: {
+                type: ShootPattern
+            }
+
+            dest: [
+                {
+                    type: ShootPattern
+                    shots: 1
+                    shotDelay: 22.5
+                }
+            ]
+        }
+
+        bullet: {
+            type: MissileBulletType
+            sprite: my-secondmod-energy-square
+            collidesAir: true
+            collidesGround: true
+
+            speed: 2
+            damage: 15
+
+            lifetime: 90
+            width: 14
+            heigth: 20
+            shrinkX: 0
+            shrinkY: 0
+            serrations: 0
+
+            homingPower: 0.3
+            homingRange: 100
+            homingDelay: 25     //60 = 1 second
+
+            aimControllable: true
+            followAimSpeed: 6
+
+            weaveMag: 1
+            weaveScale: 0.5
+
+            frontColor: 664291
+            backColor: ffffff
+
+            shootEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: RadialEffect
+
+                        rotationSpacing: 30
+                        rotationOffset: 0
+                        lengthOffset: 3
+
+                        amount: 2
+
+                        effect: {
+                            type: ParticleEffect
+
+                            particles: 3
+                            
+                            length: 50
+                            lifetime: 100
+                            sizeFrom: 1
+                            sizeTo: 5
+                            cone: 2
+
+                            useRotation: true
+                            interp: pow5Out
+                            followParent: false
+
+                            colorFrom: 9463cf
+                            colorTo: 66429100
+                            layer: 100.3
+                        }
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 14
+                        baseLength: 0
+                        length: 20
+                        lifetime: 240
+                        cone: 30
+
+                        interp: pow5Out
+                        followParent: false
+
+                        sizeFrom: 3
+                        sizeTo: 0
+
+                        colorFrom: 9463cf
+                        colorTo: 66429150
+                    }
+                ]
+            }
+
+            despawnEffect: {
+
+            }
+
+            hitcolor: 9463cf
+            hitEffect: {
+
+            }
+            
+            trailColor: 9463cf
+            trailWidth: 2
+            trailLength: 4
+            trailInterval: 0.0000000000000000000000001
+            
+        }
+    }
+
+    //the back ones
+    {
+        name: spreader-barrel
+        top: false
+        layerOffset: -0.001
+        rotate: false
+        mirror: true
+        alternate: true
+        baseRotation: -160 //it depends of "shootCone"
+
+        recoil: 3
+        shootCone: 360
+        inaccuracy: 2
+        reload: 60
+
+        x: 5
+        y: -5
+        
+        
+        shoot: {
+            type: ShootMulti
+
+            source: {
+                type: ShootPattern
+            }
+
+            dest: [
+                {
+                    type: ShootPattern
+                    shots: 1
+                    shotDelay: 22.5
+                }
+            ]
+        }
+
+        bullet: {
+            type: MissileBulletType
+            sprite: my-secondmod-energy-square
+            collidesAir: true
+            collidesGround: true
+
+            speed: 2
+            damage: 15
+
+            lifetime: 90
+            width: 14
+            heigth: 20
+            shrinkX: 0
+            shrinkY: 0
+            serrations: 0
+
+            homingPower: 0.3
+            homingRange: 100
+            homingDelay: 25     //60 = 1 second
+
+            aimControllable: true
+            followAimSpeed: 6
+
+            weaveMag: 1
+            weaveScale: 0.5
+
+            frontColor: 664291
+            backColor: ffffff
+
+            shootEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: RadialEffect
+
+                        rotationSpacing: 30
+                        rotationOffset: 0
+                        lengthOffset: 3
+
+                        amount: 2
+
+                        effect: {
+                            type: ParticleEffect
+
+                            particles: 3
+                            
+                            length: 50
+                            lifetime: 100
+                            sizeFrom: 1
+                            sizeTo: 5
+                            cone: 2
+
+                            useRotation: true
+                            interp: pow5Out
+                            followParent: false
+
+                            colorFrom: 9463cf
+                            colorTo: 66429100
+                            layer: 100.3
+                        }
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 14
+                        baseLength: 0
+                        length: 20
+                        lifetime: 240
+                        cone: 30
+
+                        interp: pow5Out
+                        followParent: false
+
+                        sizeFrom: 3
+                        sizeTo: 0
+
+                        colorFrom: 9463cf
+                        colorTo: 66429150
+                    }
+                ]
+            }
+
+            despawnEffect: {
+
+            }
+
+            hitcolor: 9463cf
+            hitEffect: {
+
+            }
+            
+            trailColor: 9463cf
+            trailWidth: 2
+            trailLength: 4
+            trailInterval: 0.0000000000000000000000001
+            
+        }
+    }
+]
+
+deathExplosionEffect: {
+    type: MultiEffect
+    effects: [
+        {
+
+        }
+    ]
+}

@@ -5,5 +5,11 @@ charge: 0
 explosiveness: 0
 flammability: 0.2
 radioactivity: 0.3
+
+frames: 30
+transitionFrames: 2
+frameTime: 2.5
+
 shownPlanets: [timera-445j]
-research: osmium
+research: amatin
+
