@@ -1,0 +1,284 @@
+type: legs
+name: Spitter
+description: WIP
+
+targetAir: false
+targetGround: true
+
+health: 580
+armor: 3
+range: 200
+speed: 1
+rotateSpeed: 4.5
+drag: 0.04
+accel: 0.1
+hitSize: 10
+
+omniMovement: true
+faceTarget: true
+
+outlineColor: 2c1b41
+
+legCount: 6
+legLength: 12
+legGroupSize: 3
+legExtension: -4    //how far the legs go (negative values ​​make the unit move forward; possitive, backwards)
+legBaseOffset: 3
+legMaxLength: 1.1
+legMinLength: 0.2
+legLengthScl: 0.96
+legForwardSl: 1.2
+legStraightness: 0.1  //how close the legs are from each other (0 to 1)
+rippleScale: 0.4
+
+legMoveSpace: 1.2
+allowLegStep: true
+hovering: true
+legPhysicsLayer: false
+shadowElevation: 0.1
+
+
+lockLegBase: true
+legContinuousMove: true
+
+weapons: [
+    {
+        x: 0
+        y: 4
+
+        reload: 45
+        recoil: 0
+        mirror: false
+        rotate: false
+        shootCone: 5
+        recoil: 1
+
+        bullet: {
+            type: BasicBulletType
+            sprite: my-secondmod-circle
+
+            width: 7
+            height: 7
+            shrinkX: 0
+            shrinkY: 0
+
+            damage: 50
+            speed: 5
+            lifetime: 50
+            recoil: 1
+
+            pierce: false
+            collidesTiles: true
+
+            frontColor: c9e5ff
+
+            hitEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
+                        region: my-secondmod-web
+
+                        length: 0
+
+                        particles: 1
+
+                        sizeFrom: 5
+                        sizeTo: 25
+
+                        colorFrom: 94cbff
+                        colorTo: 9463cf00
+
+                        lifetime: 100
+                        spin: 4
+
+                        interp: pow5Out
+                    }
+                    {
+                        type: ParticleEffect
+                        region: my-secondmod-web
+
+                        length: 30
+                        cone: 360
+
+                        particles: 20
+
+                        sizeFrom: 10
+                        sizeTo: 0
+
+                        colorFrom: 94cbff
+                        colorTo: 9463cf80
+
+                        lifetime: 110
+                        spin: 4
+
+                        interp: pow5Out
+                    }
+                    {
+                        type: ParticleEffect
+
+                        length: 30
+                        cone: 360
+
+                        particles: 20
+
+                        sizeFrom: 5
+                        sizeTo: 0
+
+                        colorFrom: 94cbff10
+                        colorTo: 9463cf50
+
+                        lifetime: 110
+                        spin: 4
+
+                        interp: pow5Out
+                    }
+                    {
+                        type: ParticleEffect
+
+                        length: 50
+                        cone: 5
+
+                        particles: 10
+
+                        sizeFrom: 6
+                        sizeTo: 0
+
+                        colorFrom: ffffff60
+                        colorTo: ffffff40
+
+                        lifetime: 100
+                        spin: 4
+
+                        interp: pow5Out
+                    }
+                ]
+            }
+            despawnEffect: none
+            shootEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
+
+                        length: 40
+                        cone: 10
+
+                        particles: 10
+
+                        sizeFrom: 3
+                        sizeTo: 0
+
+                        colorFrom: ffffff60
+                        colorTo: ffffff40
+
+                        lifetime: 100
+                        spin: 4
+
+                        interp: pow5Out
+                        followParent: false
+                    }
+                    {
+                        type: ParticleEffect
+                        line: true
+
+                        length: 40
+                        cone: 10
+
+                        particles: 10
+
+                        sizeFrom: 3
+                        sizeTo: 2
+                        strokeFrom: 2
+                        strokeTo: 0
+
+                        colorFrom: ffffff60
+                        colorTo: ffffff40
+
+                        lifetime: 100
+                        spin: 4
+
+                        interp: pow5Out
+                        followParent: false
+                    }
+                    {
+                        type: ParticleEffect
+                        line: true
+
+                        length: 25
+                        cone: 30
+
+                        particles: 10
+
+                        sizeFrom: 3
+                        sizeTo: 2
+                        strokeFrom: 2
+                        strokeTo: 0
+
+                        colorFrom: ffffff60
+                        colorTo: ffffff40
+
+                        lifetime: 20
+                        spin: 4
+
+                        interp: pow5Out
+                        followParent: false
+                    }
+                    {
+                        type: ParticleEffect
+
+                        length: 30
+                        cone: 45
+
+                        particles: 15
+
+                        sizeFrom: 3
+                        sizeTo: 0
+
+                        colorFrom: 9463cf60
+                        colorTo: 9463cf40
+
+                        lifetime: 100
+                        spin: 4
+
+                        interp: pow5Out
+                        followParent: false
+                    }
+                    {
+                        type: ParticleEffect
+
+                        length: 40
+                        cone: 45
+
+                        particles: 15
+
+                        sizeFrom: 3
+                        sizeTo: 0
+
+                        colorFrom: 94cbff40
+                        colorTo: 94cbff20
+
+                        lifetime: 100
+                        spin: 4
+
+                        interp: pow5Out
+                        followParent: false
+                    }
+                ]
+            }
+
+            trailLength: 10
+            trailWidth: 2
+            trailColor: 94cbff
+            trailEffect: missileTrail
+            trailParam: 1.8
+
+            splashDamage: 30
+            splashDamageRadius: 30
+            scaledSplashDamage: true
+        }
+
+        
+    }
+]
+targetFlags: [turret, repair, core, null]

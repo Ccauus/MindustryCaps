@@ -1,0 +1,808 @@
+type: mech
+name: Holder
+description: WIP
+
+targetAir: true
+targetGround: true
+
+speed: 0.2
+health: 10000
+armor: 20
+hitSize: 35
+range: 150
+
+canBoost: false
+faceTarget: true
+mechStepParticles: true
+crushFragile: true
+crushDamage: 50
+singleTarget: false
+circleTarget: false
+
+outlineColor: 1e1e1e
+outlineRadius: 3
+mechLegColor: 474747
+
+mechFrontSway: 0.8
+mechSideSway: 1.3
+
+rotateSpeed: 0.6
+
+stepSound: mechStepHeavy
+stepSoundPitch: 0.7
+stepSoundVolume: 0.7
+
+abilities: [
+    {
+        type: ShieldArcAbility
+        region: my-secondmod-holder-shield
+        whenShooting: false
+
+        max: 2500 //health
+        cooldown: 360
+        regen: 0.75
+
+        angle: 60
+        radius:  100
+        width: 10
+
+        x: 0
+        y: -40
+    }
+    {
+        type: ShieldArcAbility
+        region: my-secondmod-holder-backshield
+        whenShooting: true
+
+        max: 2000 //health
+        cooldown: 200
+        regen: 1
+
+        angle: 60
+        angleOffset: 180
+        radius:  100
+        width: 10
+
+        x: 0
+        y: 40
+    }
+]
+
+
+weapons: [
+    {
+        name: holder-barrel
+        top: false
+        layerOffset: -0.001
+        rotate: false
+        rotationLimit: 0
+        mirror: true
+        alternate: false
+        baseRotation: -90
+        predictTarget: false
+
+        shootSound: shootTank
+        shootSoundVolume: 0.8
+
+        recoil: 4
+        recoilTime: 180
+        shootCone: 360
+        inaccuracy: 30
+        reload: 120
+
+        shootWarmupSpeed: 0.02    //how fast it heats (0 to 1)
+        minWarmup: 0.9            //min percentage required to shoot (ex: 90%)
+        linearWarmup: false       //"true" for contant heating, "false" for smoothed (curve)
+        warmupMaintainTime: 60    //time, in frames, that the weapon remains heated after stopping fire
+        
+        x: 33
+        y: -4
+
+        shoot: {
+            shots: 1
+            firstShotDelay: 60
+        }
+
+        bullet: {
+            type: MissileBulletType
+            sprite: my-secondmod-energy-great-arrow
+            collidesAir: true
+            collidesGround: true
+
+            despawnSound: explosionDull
+            
+            speed: 1
+            damage: 200
+            splashDamage: 100
+            splashDamageRadius: 60
+            
+            lifetime: 250
+
+            width: 28
+            height: 32
+            shrinkX: -0.1
+            shrinkY: -0.2
+            serrations: 0
+
+            homingPower: 0
+            homingRange: 0
+            homingDelay: 0
+
+            aimControllable: true
+            followAimSpeed: 2
+
+            weaveMag: 0
+            weaveScale: 0
+
+            frontColor: 9f6fd9
+            backColor: 7348a7
+
+            
+            trailWidth: 7
+            trailLength: 10
+            trailInterval: 0.0000000000000000000000001
+            trailEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
+
+                        particles: 1
+
+                        lifetime: 60
+                        cone: 0
+                        length: 0
+                        baseLength: 0
+
+                        lightScl: 1
+                        lightOpacity: 2   
+
+                        sizeFrom: 6
+                        sizeTo: 0
+
+                        colorFrom: 9f6fd9
+                        colorTo: 7348a7
+                    }
+                ]
+            }
+
+            hitEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: WaveEffect
+
+                        sizeFrom: 0
+                        sizeTo: 45
+                        strokeFrom: 7
+                        strokeTo: 0
+
+                        lifetime: 100
+                        interp: pow5Out
+
+                        colorFrom: 9463cf
+                        colorTo: 9463cf
+                    }
+                    {
+                        type: WaveEffect
+
+                        sizeFrom: 0
+                        sizeTo: 25
+                        strokeFrom: 7
+                        strokeTo: 0
+
+                        lifetime: 150
+                        interp: pow5Out
+
+                        colorFrom: 9463cf
+                        colorTo: 9463cf
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 10
+                        length: 100
+                        lifetime: 60
+
+                        sizeFrom: 6
+                        sizeTo: 2
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: 9463cf
+                        colorTo: 9463cf00
+                        layer: 100.3
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 30
+                        length: 80
+                        lifetime: 500
+
+                        sizeFrom: 3
+                        sizeTo: 6
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: 9463cf
+                        colorTo: 542f8000
+                        layer: 100.3
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 30
+                        length: 60
+                        lifetime: 350
+
+                        sizeFrom: 5
+                        sizeTo: 0
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: 9463cf
+                        colorTo: 9463cf
+                        layer: 100.3
+                    }
+                ]
+            }
+
+            shootEffect: {
+                type: MultiEffect
+                effects:[
+                    {
+                        type: ParticleEffect
+
+                        particles: 10
+                        length: 30
+                        lifetime: 500
+
+                        sizeFrom: 3
+                        sizeTo: 6
+                        cone: 45
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: 9463cf
+                        colorTo: 542f8000
+                        layer: 100.3
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 35
+                        length: 100
+                        lifetime: 150
+
+                        sizeFrom: 2
+                        sizeTo: 10
+                        cone: 60
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: 9463cf
+                        colorTo: 542f8000
+                        layer: 100.3
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 15
+                        length: 50
+                        lifetime: 150
+
+                        sizeFrom: 2
+                        sizeTo: 10
+                        cone: 60
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: 9463cf
+                        colorTo: 542f8000
+                        layer: 100.3
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 35
+                        length: 20
+                        lifetime: 100
+
+                        sizeFrom: 3
+                        sizeTo: 0
+                        cone: 60
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: 9463cf80
+                        colorTo: 542f8000
+                        layer: 100.3
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 40
+                        length: 50
+                        lifetime: 120
+
+                        sizeFrom: 4
+                        sizeTo: 0
+                        cone: 60
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: 9463cf
+                        colorTo: 9463cf
+                        layer: 100.3
+                    }
+                    {
+                        type: ParticleEffect
+                        line: true
+
+                        particles: 30
+                        length: 100
+                        lifetime: 30
+
+                        strokeFrom: 3
+                        strokeTo: 0
+                        sizeFrom: 5
+                        sizeTo: 2
+                        cone: 60
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: ffffff
+                        colorTo: 9463cf
+                        layer: 100.3
+                    }
+                ]
+            }
+        }
+    }
+
+
+
+
+    {
+        name: holder-invbarrel
+        top: false
+        layerOffset: -0.001
+        rotate: false
+        rotationLimit: 0
+        mirror: true
+        alternate: false
+        baseRotation: -90
+
+        shootSound: explosionCleroi
+        shootSoundVolume: 0.7
+
+        recoil: 0
+        recoilTime: 0
+        shootCone: 360
+        inaccuracy: 30
+        reload: 120
+
+        shootWarmupSpeed: 0.02    
+        minWarmup: 0.9            
+        linearWarmup: false      
+        warmupMaintainTime: 60
+
+        x: 34
+        y: -4
+
+         shoot: {
+            shots: 3
+            firstShotDelay: 60
+        }
+
+        bullet: {
+            type: MissileBulletType
+            sprite: my-secondmod-spore
+            collidesAir: true
+            collidesGround: true
+
+            despawnSound: shootCleroi
+            
+            speed: 0.5
+            damage: 60
+            splashDamage: 30
+            splashDamageRadius: 20
+            
+            lifetime: 1500
+
+            width: 20
+            height: 20
+            shrinkX: -1
+            shrinkY: -1
+            serrations: 0
+
+            homingPower: 0.01
+            homingRange: 50
+            homingDelay: 70
+
+            aimControllable: false
+            followAimSpeed: 0
+
+            weaveMag: 6
+            weaveScale: 7
+            spin: 3
+
+            frontColor: a35aa4
+            
+            trailWidth: 2
+            trailLength: 10
+            trailInterval: 0.0000000000000000000000001
+            trailEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
+                        particles: 1
+                        lifetime: 75
+                        cone: 0
+                        length: 0
+                        baseLength: 0
+                        lightScl: 2
+                        lightOpacity: 2               
+                        sizeFrom: 2
+                        sizeTo: 0
+                        colorFrom: b1537b
+                        colorTo: b1537b
+                    }
+                ]
+            }
+
+            shootEffect: {
+                type: MultiEffect
+                effects:[
+                    {
+                        type: ParticleEffect
+
+                        particles: 10
+                        length: 40
+                        lifetime: 100
+
+                        sizeFrom: 4
+                        sizeTo: 0
+                        cone: 75
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: b1537b
+                        colorTo: b1537b
+                        layer: 100.3
+                    }
+                ]
+            }
+
+            hitEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        //smoke
+                        type: ParticleEffect
+
+                        particles: 10
+                        length: 35
+                        lifetime: 60
+
+                        sizeFrom: 0
+                        sizeTo: 6
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: b1537b
+                        colorTo: b1537b00
+                        layer: 100.3
+                    }
+                    {
+                        //smoke100
+                        type: ParticleEffect
+
+                        particles: 10
+                        length: 20
+                        lifetime: 60
+
+                        sizeFrom: 4
+                        sizeTo: 0
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: b1537b
+                        colorTo: b1537b
+                        layer: 100.3
+                    }
+                    {
+                        //sparks
+                        type: ParticleEffect
+                        line: true
+
+                        particles: 20
+                        baseLength: 20
+                        length: 0
+                        lifetime: 60
+
+                        sizeFrom: 2
+                        sizeTo: 0
+                        strokeFrom: 1
+                        strokeTo: 0
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: b1537b
+                        colorTo: b1537b80
+                        layer: 100.3
+                    }
+                    {
+                        //wave
+                        type: WaveEffect
+
+                        sizeFrom: 0
+                        sizeTo: 20
+                        strokeFrom: 6
+                        strokeTo: 0
+
+                        lifetime: 60
+                        interp: pow5Out
+
+                        colorFrom: b1537b
+                        colorTo: b1537b
+                    
+                    }
+                ]
+            }
+        }
+    }
+]
+
+parts: [
+    //SideArms
+    {
+        type: RegionPart
+        suffix: -left-arm
+        outlineLayerOffset: -0.0001
+        under: true
+        moves: [
+            {
+                progress: warmup
+                x: -0.4
+                y: -8
+                rot: -20
+            }
+            {
+                progress: recoil
+                x: 1
+                y: -4
+                rot: -10
+            }
+        ] 
+    }
+    {
+        type: RegionPart
+        suffix: -right-arm
+        outlineLayerOffset: -0.0001
+        under: true
+        moves: [
+            {
+                progress: warmup
+                x: 0.4
+                y: -8
+                rot: 20
+            }
+            {
+                progress: recoil
+                x: -1
+                y: -4
+                rot: 10
+            }
+        ] 
+    }
+
+    //LowerArms
+    {
+        type: RegionPart
+        suffix: -left-lower-arm
+        outlineLayerOffset: -0.0001
+        under: true
+        moves: [
+            {
+                progress: warmup
+                x: 0
+                y: 0
+                rot: 0
+            }
+            {
+                progress: recoil
+                x: 0
+                y: 2
+                rot: 0
+            }
+        ] 
+    }
+    {
+        type: RegionPart
+        suffix: -right-lower-arm
+        outlineLayerOffset: -0.0001
+        under: true
+        moves: [
+            {
+                progress: warmup
+                x: 0
+                y: 0
+                rot: 0
+            }
+            {
+                progress: recoil
+                x: 0
+                y: 2
+                rot: 0
+            }
+        ] 
+    }
+
+    //UpperArms
+    {
+        type: RegionPart
+        suffix: -left-upper-arm
+        outlineLayerOffset: -0.0001
+        under: true
+        moves: [
+            {
+                progress: warmup
+                x: -4
+                y: -4
+                rot: -10
+            }
+            {
+                progress: recoil
+                x: -0.4
+                y: -1
+                rot: 5
+            }
+        ] 
+    }
+    {
+        type: RegionPart
+        suffix: -right-upper-arm
+        under: true
+        moves: [
+            {
+                progress: warmup
+                x: 4
+                y: -4
+                rot: 10
+            }
+            {
+                progress: recoil
+                x: 0.4
+                y: -1
+                rot: -5
+            }
+        ] 
+    }
+
+    //MIDDLE
+    {
+        type: RegionPart
+        suffix: -part
+        outlineLayerOffset: -0.0001
+        under: false
+        moves: [
+            {
+                progress: warmup
+                x: 0
+                y: 0
+                rot: 0
+            }
+            {
+                progress: recoil
+                x: 0
+                y: 0
+                rot: 0
+            }
+        ] 
+    }
+]
+
+deathExplosionEffect: {
+    type: MultiEffect
+    effects: [
+        {
+            type: WaveEffect
+
+            sizeFrom: 0
+            sizeTo: 3
+            strokeFrom: 3
+            strokeTo: 0
+
+            lifetime: 25
+
+            colorFrom: 7c52af70
+            colorTo: 66429100
+
+        }
+        {
+            type: WaveEffect
+
+            sides: 25
+
+            sizeFrom: 0
+            sizeTo: 10
+            strokeFrom: 2
+            strokeTo: 0
+
+            lifetime: 60
+
+            colorFrom: 7c52af70
+            colorTo: 66429100
+
+        }
+        {
+            type: ParticleEffect
+
+            particles: 10
+                            
+            length: 60
+            lifetime: 240
+
+            sizeFrom: 1
+            sizeTo: 5
+            cone: 360
+
+            interp: pow5Out
+
+            colorFrom: 9463cf
+            colorTo: 58358200
+        }
+        {
+            type: ParticleEffect
+
+            particles: 20
+                            
+            length: 30
+            lifetime: 360
+
+            sizeFrom: 4
+            sizeTo: 0
+            cone: 360
+
+            interp: pow5Out
+
+            colorFrom: 9463cf
+            colorTo: 58358200
+        }
+    ]
+}

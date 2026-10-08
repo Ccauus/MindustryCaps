@@ -1,0 +1,327 @@
+type: flying
+name: Balloon
+description: WIP
+flying: true
+
+targetAir: true
+targetGround: true
+
+outlineColor: 44172c
+outlineRadius: 2
+engineSize: 0
+shadowElevation: 1.2
+groundLayer: 40
+
+controller: flyingAI
+
+hitSize: 9
+health: 120
+speed: 2
+range: 60
+
+accel: 0.02
+drag: 0.02
+rotateSpeed: 1
+
+lowAltitude: false
+omniMovement: true
+circleTarget: true
+faceTarget: false
+
+wreckSoundVolume: 0.8      //deathsound
+
+weapons: [
+    {
+        shootOnDeath: true //only shoots when it dies
+        targetUnderBlocks: false
+        mirror: false
+
+        reload: 30
+        shootCone: 180
+
+        ejectEffect: none
+
+        shootSound: shootConquer
+        shootSoundVolume: 0.9
+        shootSoundPitchMin: 1.5
+        shootSoundPitchMax: 3
+        
+        x: 0
+        y:0
+        shootX: 0
+        shootY: 0
+
+        bullet: {
+            type: BasicBulletType
+
+            collidesTiles: false
+            collides: false
+            hittable: false
+            instantDisappear: true
+            despawnShake: 6
+
+            killShooter: true
+
+            rangeOverride: 15
+
+            speed: 0
+
+            splashDamage: 100
+            splashDamageRadius: 80
+            scaledSplashDamage: true
+            buildingDamageMultiplier: 1.2
+            
+            hitEffect:{
+                type: MultiEffect
+                effects: [
+                    {
+                        //smoke
+                        type: ParticleEffect
+
+                        particles: 20
+                        length: 120
+                        lifetime: 200
+
+                        sizeFrom: 3
+                        sizeTo: 6
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: b1537b
+                        colorTo: b1537b00
+                        layer: 100.3
+                    }
+                    {
+                        //smoke
+                        type: ParticleEffect
+
+                        particles: 40
+                        length: 90
+                        lifetime: 700
+
+                        sizeFrom: 3
+                        sizeTo: 8
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: b1537b
+                        colorTo: b1537b00
+                        layer: 100.3
+                    }
+                    {
+                        //smoke
+                        type: ParticleEffect
+
+                        particles: 20
+                        length: 110
+                        lifetime: 1000
+
+                        sizeFrom: 3
+                        sizeTo: 6
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: b1537b
+                        colorTo: b1537b00
+                        layer: 100.3
+                    }
+                    {
+                        //spores
+                        type: ParticleEffect
+
+                        particles: 20
+                        length: 80
+                        lifetime: 200
+
+                        sizeFrom: 4
+                        sizeTo: 0
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: b1537b
+                        colorTo: b1537b
+                        layer: 100.3
+                    }
+                    {
+                        //spores
+                        type: ParticleEffect
+
+                        particles: 20
+                        length: 110
+                        lifetime: 600
+
+                        sizeFrom: 5
+                        sizeTo: 0
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: b1537b
+                        colorTo: b1537b
+                        layer: 100.3
+                    }
+                    {
+                        //sparks
+                        type: ParticleEffect
+                        line: true
+
+                        particles: 40
+                        length: 130
+                        lifetime: 30
+
+                        strokeFrom: 3
+                        strokeTo: 0
+                        sizeFrom: 5
+                        sizeTo: 0
+                        cone: 360
+
+                        useRotation: true
+                        interp: pow5Out
+                        followParent: false
+
+                        colorFrom: ffffff
+                        colorTo: dc94aa
+                        layer: 100.3
+                    }
+                    {
+                        //wave
+                        type: WaveEffect
+
+                        sizeFrom: 0
+                        sizeTo: 60
+                        strokeFrom: 30
+                        strokeTo: 0
+
+                        lifetime: 100
+                        interp: pow5Out
+
+                        colorFrom: b1537b
+                        colorTo: b1537b
+                    }
+                    {
+                        //wave
+                        type: WaveEffect
+
+                        sizeFrom: 0
+                        sizeTo: 40
+                        strokeFrom: 10
+                        strokeTo: 0
+
+                        lifetime: 140
+                        interp: pow5Out
+
+                        colorFrom: b1537b
+                        colorTo: b1537b
+                    }
+
+                ]
+            }
+        }
+    }
+]
+
+abilities: [
+    {
+        type: MoveEffectAbility
+
+        minVelocity: 0
+        interval: 6
+
+        rotateEffect: true
+
+        x: 0
+        y: 0
+
+        effect: {
+            type: ParticleEffect
+
+            colorFrom: fcb25b
+            colorTo: b1537b
+
+            lifetime: 35
+            particles: 1
+
+            cone: 0
+            length: 0
+            baseLenght: 0
+            lightScl: 4
+            lightOpacity: 2
+            spin: 0
+            sizeFrom: 4
+            sizeTo: 0
+        }
+    }
+
+]
+
+deathExplosionEffect: {
+    type: MultiEffect
+    effects: [
+        {
+            type: ParticleEffect
+
+            particles: 10
+                            
+            length: 60
+            lifetime: 240
+
+            sizeFrom: 1
+            sizeTo: 5
+            cone: 360
+
+            interp: pow5Out
+
+            colorFrom: b1537b
+            colorTo: b1537b00
+        }
+        {
+            type: ParticleEffect
+
+            particles: 20
+                            
+            length: 30
+            lifetime: 360
+
+            sizeFrom: 4
+            sizeTo: 0
+            cone: 360
+
+            interp: pow5Out
+
+            colorFrom: b1537b
+            colorTo: b1537b00
+        }
+        {
+            type: ParticleEffect
+
+            particles: 30
+                            
+            length: 100
+            lifetime: 360
+
+            sizeFrom: 2
+            sizeTo: 6
+            cone: 360
+
+            interp: pow5Out
+
+            colorFrom: b1537b
+            colorTo: b1537b00
+        }
+    ]
+}
+targetFlags: [factory, core, null]

@@ -4,6 +4,7 @@ type: flying
 flying: true
 controller: BuilderAI
 faceTarget: true
+isEnemy: false
 
     //caracteristicas
 rotateSpeed: 10

@@ -1,0 +1,99 @@
+type: crawl
+name: Dust
+description: WIP
+
+outlineColor: 2c1b41
+
+targetAir: false
+targetGround: true
+
+drownTimeMultiplier: 1
+
+omniMovement: false
+speed: 1
+drag: 0.1
+accel: 0.08
+health: 180
+armor: 1
+rotateSpeed: 2.5
+
+hitSize: 5
+
+segments: 3
+segmentMag: 3       //left & right
+segmentScl: 8       //up & down
+segmentPhase: 4     //"S" movement
+segmentMaxRot: 30    //rotation on moving
+
+drawCell: false      //"drawBody: false" so it doesnt matter
+hidden: false
+drawBody: false    //dont draw the png called "dust". Will only draw the "-segmentX" ones.
+
+crushDamage: 1
+circleTarget: true
+circleTargetRadius: 45
+
+weapons: [
+    {
+        x: 0
+        y: 4
+
+        reload: 60
+        recoil: -3
+        mirror: false
+        rotate: false
+        shootCone: 360
+
+        ejectEffect: none
+
+        minShootVelocity: 1.5
+
+        bullet: {
+            type: BasicBulletType
+            sprite: my-secondmod-punch
+
+            width: 25
+            height: 25
+
+            damage: 10
+            speed: 2.3
+            lifetime: 6
+
+            recoil: -3
+            despawnHit: false
+            pierce: true
+            pierceBuilding: true
+            pierceCap: 10           //how many buildings it can pierce
+
+            frontColor: 9463cf
+
+            hitEffect: none
+            despawnEffect: none
+            shootEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
+                        line: true
+                        
+                        particles: 8
+                        cone: 5
+                        length: -10
+                        lifetime: 20
+
+                        sizeFrom: 8
+                        sizeTo: 8
+                        strokeFrom: 1.5
+                        strokeTo: 0
+
+                        colorFrom: 9463cf
+                        colorTo: 9463cf
+                    }
+                ]
+            }
+        }
+        
+    }
+]
+targetFlags: [factory, repair, core, null]
+

@@ -1,0 +1,250 @@
+type: flying
+name: The Bag
+description: WIP
+flying: true
+
+targetAir: false
+targetGround: true
+
+omniMovement: true
+rotateSpeed: 0.08
+
+outlineColor: 44172c
+engineSize: 0
+shadowElevation: 2
+groundLayer: 41
+
+controller: flyingAI
+
+hitSize: 20
+
+speed: 0.8
+drag: 0.005
+accel: 0.05
+range: 100
+
+lowAltitude: false
+circleTarget: true
+faceTarget: false
+
+wreckSoundVolume: 1.2
+
+health: 900
+armor: 10
+
+weapons: [
+    {
+        shootOnDeath: true          //only shoots when it dies
+        targetUnderBlocks: false
+        mirror: false
+
+        reload: 60
+        shootCone: 270
+
+        ejectEffect: none
+
+        shootSound: shootConquer
+        shootSoundVolume: 1.5
+        shootSoundPitchMin: 4
+        shootSoundPitchMax: 6
+        
+        x: 0
+        y: 0
+        shootX: 0
+        shootY: 0
+
+        bullet: {
+            type: BasicBulletType
+
+            collidesTiles: false
+            collides: false
+            hittable: false
+            instantDisappear: true
+            despawnShake: 15
+
+            killShooter: true
+
+            rangeOverride: 10
+
+            speed: 0
+
+            splashDamage: 100
+            splashDamageRadius: 120
+            scaledSplashDamage: true
+            buildingDamageMultiplier: 1.2
+
+            hitEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        //explosion sprite
+                        type: ParticleEffect
+                        region: my-secondmod-the-bag-explosion
+
+                        length: 0
+
+                        particles: 1
+
+                        sizeFrom: 60
+                        sizeTo: 90
+
+                        colorFrom: ffffff
+                        colorTo: e48cb150
+
+                        lifetime: 20
+                        spin: 0
+                        layer: 200
+
+                        followParent: false
+                    }
+                    {
+                        //explosion sprite
+                        type: ParticleEffect
+                        region: my-secondmod-the-bag-explosion
+
+                        length: 0
+
+                        particles: 1
+
+                        sizeFrom: 30
+                        sizeTo: 60
+
+                        colorFrom: ffffff
+                        colorTo: ffffff
+
+                        lifetime: 25
+                        spin: 0
+                        layer: 200
+
+                        followParent: false
+                    }
+                    {
+                        //smoke
+                        type: ParticleEffect
+
+                        length: 100
+
+                        particles: 30
+
+                        sizeFrom: 4
+                        sizeTo: 8
+
+                        colorFrom: b1537b
+                        colorTo: b1537b00
+
+                        lifetime: 200
+                        spin: 0
+                        layer: 200
+
+                        followParent: false
+                        interp: pow5Out
+                    }
+                    {
+                        //smoke
+                        type: ParticleEffect
+
+                        length: 200
+
+                        particles: 30
+
+                        sizeFrom: 4
+                        sizeTo: 10
+
+                        colorFrom: b1537b
+                        colorTo: b1537b00
+
+                        lifetime: 260
+                        spin: 0
+                        layer: 200
+
+                        followParent: false
+                        interp: pow5Out
+                    }
+                    {
+                        //spark
+                        type: ParticleEffect
+                        line: true
+
+                        length: 200
+
+                        particles: 50
+
+                        sizeFrom: 6
+                        sizeTo: 3
+                        strokeFrom: 15
+                        strokeTo: 0
+
+                        colorFrom: ffffff
+                        colorTo: ffffff
+
+                        lifetime: 25
+                        spin: 0
+                        layer: 200
+
+                        followParent: false
+                        interp: pow5Out
+                    }
+                    {
+                        //spores
+                        type: ParticleEffect
+
+                        length: 200
+
+                        particles: 30
+
+                        sizeFrom: 6
+                        sizeTo: 0
+
+                        colorFrom: ffffff
+                        colorTo: b1537b
+
+                        lifetime: 300
+                        spin: 0
+                        layer: 200
+
+                        followParent: false
+                        interp: pow3Out
+                    }
+                    {
+                        type: WaveEffect
+
+                        sizeFrom: 0
+                        sizeTo: 150
+                        strokeFrom: 10
+                        strokeTo: 0
+
+                        lifetime: 150
+                        interp: pow5Out
+
+                        colorFrom: ffffff
+                        colorTo: b1537b
+                    }
+                    {
+                        type: WaveEffect
+
+                        sizeFrom: 0
+                        sizeTo: 100
+                        strokeFrom: 10
+                        strokeTo: 0
+
+                        lifetime: 175
+                        interp: pow5Out
+
+                        colorFrom: ffffff
+                        colorTo: b1537b
+                    }
+
+                ]
+            }
+        }
+    }
+]
+abilities: [
+    {
+        type: SpawnDeathAbility
+        unit: my-secondmod-dust
+        amount: 5
+        spread: 20
+    }
+]
+targetFlags: [factory, core, null]

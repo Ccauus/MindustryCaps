@@ -2,14 +2,18 @@ type: mech
 name: Spreader
 description: WIP
 
+targetAir: true
+targetGround: true
+
 speed: 0.7
 health: 300
-armor: 2
+armor: 1
 hitSize: 10
 
 canBoost: false
-faceTarget: true
+faceTarget: false
 mechStepParticles: true
+singleTarget: false
 
 outlineColor: 1e1e1e
 outlineRadius: 3
@@ -23,9 +27,8 @@ stepSoundVolume: 0.3
 
 weapons: [
     {
-        name: spreader-barrel
+        name: spreader-barrel-small
         top: false
-        layerOffset: -0.001
         rotate: false
         mirror: true
         alternate: true
@@ -39,8 +42,8 @@ weapons: [
         inaccuracy: 2
         reload: 45
 
-        x: -10
-        y: -3.7
+        x: -9.5
+        y: -3.3
         
         
         shoot: {
@@ -70,14 +73,14 @@ weapons: [
 
             lifetime: 90
             width: 14
-            heigth: 20
+            height: 20
             shrinkX: 0
             shrinkY: 0
             serrations: 0
 
-            homingPower: 0.3
-            homingRange: 100
-            homingDelay: 25     //60 = 1 second
+            homingPower: 0
+            homingRange: 0
+            homingDelay: 0     //60 = 1 second
 
             aimControllable: true
             followAimSpeed: 6
@@ -142,12 +145,86 @@ weapons: [
             }
 
             despawnEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
+
+                        particles: 20
+                        baseLength: 0
+                        length: 10
+                        lifetime: 240
+                        cone: 360
+
+                        interp: pow5Out
+
+                        sizeFrom: 4
+                        sizeTo: 0
+
+                        colorFrom: 7c52af
+                        colorTo: 58358250
+                    
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 3
+                            
+                        length: 30
+                        lifetime: 100
+                        sizeFrom: 1
+                        sizeTo: 5
+                        cone: 360
+
+                        interp: pow5Out
+
+                        colorFrom: 9463cf
+                        colorTo: 58358200
+                    }
+                ]
 
             }
 
             hitcolor: 9463cf
             hitEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
 
+                        particles: 20
+                        baseLength: 0
+                        length: 10
+                        lifetime: 200
+                        cone: 50
+
+                        interp: pow5Out
+
+                        sizeFrom: 4
+                        sizeTo: 0
+
+                        colorFrom: 7c52af
+                        colorTo: 58358250
+                    
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 4
+                            
+                        length: 30
+                        lifetime: 180
+
+                        sizeFrom: 1
+                        sizeTo: 5
+                        cone: 10
+
+                        interp: pow5Out
+
+                        colorFrom: 9463cf
+                        colorTo: 58358200
+                    }
+                ]
             }
             
             trailColor: 9463cf
@@ -166,7 +243,7 @@ weapons: [
         rotate: false
         mirror: true
         alternate: true
-        baseRotation: -160 //it depends of "shootCone"
+        baseRotation: -170 //it depends of "shootCone"
 
         shootSound: shootCleroi
         shootSoundVolume: 0.8
@@ -176,8 +253,8 @@ weapons: [
         inaccuracy: 2
         reload: 60
 
-        x: 5
-        y: -5
+        x: 4
+        y: -5.7
         
         
         shoot: {
@@ -207,14 +284,14 @@ weapons: [
 
             lifetime: 90
             width: 14
-            heigth: 20
+            height: 20
             shrinkX: 0
             shrinkY: 0
             serrations: 0
 
-            homingPower: 0.3
-            homingRange: 100
-            homingDelay: 25     //60 = 1 second
+            homingPower: 0
+            homingRange: 0
+            homingDelay: 0     //60 = 1 second
 
             aimControllable: true
             followAimSpeed: 6
@@ -279,18 +356,92 @@ weapons: [
             }
 
             despawnEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
 
+                        particles: 20
+                        baseLength: 0
+                        length: 10
+                        lifetime: 240
+                        cone: 360
+
+                        interp: pow5Out
+
+                        sizeFrom: 4
+                        sizeTo: 0
+
+                        colorFrom: 7c52af
+                        colorTo: 58358250
+                    
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 3
+                            
+                        length: 30
+                        lifetime: 100
+                        sizeFrom: 1
+                        sizeTo: 5
+                        cone: 360
+
+                        interp: pow5Out
+
+                        colorFrom: 9463cf
+                        colorTo: 58358200
+                    }
+                ]
             }
 
             hitcolor: 9463cf
             hitEffect: {
+                type: MultiEffect
+                effects: [
+                    {
+                        type: ParticleEffect
 
+                        particles: 20
+                        baseLength: 0
+                        length: 10
+                        lifetime: 200
+                        cone: 50
+
+                        interp: pow5Out
+
+                        sizeFrom: 4
+                        sizeTo: 0
+
+                        colorFrom: 7c52af
+                        colorTo: 58358250
+                    
+                    }
+                    {
+                        type: ParticleEffect
+
+                        particles: 4
+                            
+                        length: 30
+                        lifetime: 180
+
+                        sizeFrom: 1
+                        sizeTo: 5
+                        cone: 10
+
+                        interp: pow5Out
+
+                        colorFrom: 9463cf
+                        colorTo: 58358200
+                    }
+                ]
             }
             
             trailColor: 9463cf
             trailWidth: 2
             trailLength: 4
             trailInterval: 0.0000000000000000000000001
+            trailInterp: slope
             
         }
     }
@@ -300,7 +451,70 @@ deathExplosionEffect: {
     type: MultiEffect
     effects: [
         {
+            type: WaveEffect
 
+
+
+            sizeFrom: 0
+            sizeTo: 30
+            strokeFrom: 3
+            strokeTo: 0
+
+            lifetime: 25
+
+            colorFrom: 7c52af70
+            colorTo: 66429100
+
+        }
+        {
+            type: WaveEffect
+
+
+
+            sizeFrom: 0
+            sizeTo: 50
+            strokeFrom: 2
+            strokeTo: 0
+
+            lifetime: 60
+
+            colorFrom: 7c52af70
+            colorTo: 66429100
+
+        }
+        {
+            type: ParticleEffect
+
+            particles: 10
+                            
+            length: 80
+            lifetime: 240
+
+            sizeFrom: 1
+            sizeTo: 5
+            cone: 360
+
+            interp: pow5Out
+
+            colorFrom: 9463cf
+            colorTo: 58358200
+        }
+        {
+            type: ParticleEffect
+
+            particles: 20
+                            
+            length: 60
+            lifetime: 360
+
+            sizeFrom: 4
+            sizeTo: 0
+            cone: 360
+
+            interp: pow5Out
+
+            colorFrom: 9463cf
+            colorTo: 58358200
         }
     ]
 }
